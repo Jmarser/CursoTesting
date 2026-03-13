@@ -1,0 +1,55 @@
+# ========================
+# === Android & Gradle ===
+# ========================
+*.iml                           # Archivos del proyecto Android Studio/Intellij, especificos de cada usuario
+.gradle/                        # Archivos de configuración/cache de Gradle
+build/                          # Carpeta de salida de compilación, donde se generan los outputs compilados.
+.externalNativeBuild/           # Archivos de compilación nativa (C/C++)
+.cxx/                           # Archivos intermedios de compilación nativa
+captures/                       # Capturas de pantalla/vídeo del IDE
+output.json                     # Salida JSON de builds
+*.apk                           # APKs generados
+*.ap_                           # Archivos empaquetados intermedios
+
+# =================================
+# === Android Studio / intellij ===
+# =================================
+.idea/                          # Configuración del proyecto Android Studio
+*.iws                           # Archivos de espacio de trabajo (IntelliJ)
+*.ipr                           # Archivos del proyecto IntelliJ
+*.bak                           # Backups temporales
+*.swp                           # Archivos swap de editores
+.idea/caches/                   # Cachés del proyecto
+.idea/libraries/                # Configuraciones de librerías
+.idea/modules.xml               # Configuración de módulos
+.idea/workspace.xml             # Espacio de trabajo (personal)
+.idea/navEditor.xml             # Editor de navegación
+.idea/assetWizardSettings.xml   # Configuración del asistente de assets
+misc.xml                        # Configuración miscelánea
+deploymentTargetDropDown.xml   # Target de despliegue del IDE
+render.experimental.xml        # Configuración de renderizado del IDE
+
+# ===========================
+# === Configuración local ===
+# ===========================
+local.properties                # Rutas locales del SDK
+/local.properties
+
+# ===================================
+# === Archivos del sistema / Logs ===
+# ===================================
+.DS_Store                       # Archivo del sistema macOS
+*.log                           # Archivos de logs
+*.hprof                         # Dumps de memoria (profiling)
+
+# ===================================
+# === Claves y archivos sensibles ===
+# ===================================
+*.jks                           # Archivos de claves Java
+*.keystore                      # Archivos de almacén de claves
+google-services.json            # Configuración de Firebase/Google APIs
+
+# ========================
+# === Otros ===
+# ========================
+*.testResult                    # Resultados de tests generados
