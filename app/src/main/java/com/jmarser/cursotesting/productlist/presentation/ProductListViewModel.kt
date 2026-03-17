@@ -3,6 +3,7 @@ package com.jmarser.cursotesting.productlist.presentation
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.jmarser.cursotesting.productlist.domain.model.Product
+import com.jmarser.cursotesting.productlist.domain.model.ProductWithPromotion
 import com.jmarser.cursotesting.productlist.domain.model.SortOption
 import com.jmarser.cursotesting.productlist.domain.usecase.GetProductsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -48,9 +49,14 @@ class ProductListViewModel @Inject constructor(
             .onStart {
                 _uiState.value = ProductListUiState.Loading
             }
-            .onEach {products: List<Product> ->
-                val categories = products.map{it.category}.distinct().sorted()
-                _uiState.value = ProductListUiState.Success(productList = products, categories = categories, selectedCategory = null, sortOption = SortOption.NONE)
+            .onEach {products: List<ProductWithPromotion> ->
+                val categories = products.map{it.product.category}.distinct().sorted()
+                _uiState.value = ProductListUiState.Success(
+                    productList = products,
+                    categories = categories,
+                    selectedCategory = null,
+                    sortOption = SortOption.NONE
+                )
             }.catch {e: Throwable ->
                 _uiState.value = ProductListUiState.Error(e.message.orEmpty())
             }

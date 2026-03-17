@@ -6,7 +6,9 @@ import com.jmarser.cursotesting.productlist.data.local.database.MarketDatabase
 import com.jmarser.cursotesting.productlist.data.local.database.dao.ProductDao
 import com.jmarser.cursotesting.productlist.data.local.database.dao.PromotionDao
 import com.jmarser.cursotesting.productlist.data.repository.ProductRepositoryImpl
+import com.jmarser.cursotesting.productlist.data.repository.PromotionRepositoryImpl
 import com.jmarser.cursotesting.productlist.domain.repository.ProductRepository
+import com.jmarser.cursotesting.productlist.domain.repository.PromotionRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -22,6 +24,12 @@ object DataModule {
     @Singleton
     fun provideProductRepository(productRepositoryImpl: ProductRepositoryImpl): ProductRepository{
         return productRepositoryImpl
+    }
+
+    @Provides
+    @Singleton
+    fun providePromotionRepository(promotionRepositoryImpl: PromotionRepositoryImpl): PromotionRepository{
+        return promotionRepositoryImpl
     }
 
     @Provides

@@ -2,12 +2,12 @@ package com.jmarser.cursotesting.productlist.data.repository
 
 import com.jmarser.cursotesting.core.domain.coroutines.DispatchersProvider
 import com.jmarser.cursotesting.productlist.data.local.LocalDataSource
+import com.jmarser.cursotesting.productlist.data.local.database.entity.PromotionEntity
 import com.jmarser.cursotesting.productlist.data.mappers.toDomain
 import com.jmarser.cursotesting.productlist.data.mappers.toEntity
 import com.jmarser.cursotesting.productlist.data.remote.RemoteDataSource
-import com.jmarser.cursotesting.productlist.domain.model.Product
-import com.jmarser.cursotesting.productlist.domain.repository.ProductRepository
-import jakarta.inject.Inject
+import com.jmarser.cursotesting.productlist.domain.model.Promotion
+import com.jmarser.cursotesting.productlist.domain.repository.PromotionRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.flow.Flow
@@ -17,31 +17,34 @@ import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.withContext
+import kotlinx.serialization.json.Json
+import javax.inject.Inject
 
 /**
  * Project: CursoTesting
- * File: ProductRepositoryImpl.kt
+ * File: PromotionRepositoryImpl.kt
  * Author: Tu Jmarser <aenur32@gmail.com>
- * Created: 13/03/2026
+ * Created: 17/03/2026
  */
 
-class ProductRepositoryImpl @Inject constructor(
+class PromotionRepositoryImpl @Inject constructor(
     private val remoteDataSource: RemoteDataSource,
     private val localDataSource: LocalDataSource,
-    private val dispatchers: DispatchersProvider
-) : ProductRepository {
+    private val dispatchers: DispatchersProvider,
+    private val json: Json
+): PromotionRepository {
 
     private val refreshScope = CoroutineScope(SupervisorJob() + dispatchers.io)
     private val refreshMutex = Mutex()
 
-    override fun getProducts(): Flow<List<Product>> {
-        return localDataSource.getAllProducts().map { entities ->
-            entities.mapNotNull { it.toDomain() }
+    override fun getActivePromotions(): Flow<List<Promotion>> {
+        return localDataSource.getAllPromotions().map { entities ->
+            entities.mapNotNull { it.toDomain(json) }
         }.onStart {
             refreshScope.launch {
                 if (!refreshMutex.tryLock()) return@launch
                 try {
-                    refreshProduct()
+                    refreshPromotions()
                 }catch (e: Exception){
 
                 }finally {
@@ -53,17 +56,12 @@ class ProductRepositoryImpl @Inject constructor(
         }
     }
 
-    override fun getProductById(id: String): Flow<Product?> {
-        TODO("Not yet implemented")
-    }
+    override suspend fun refreshPromotions() {
+        withContext(dispatchers.io){
+            val promotions = remoteDataSource.getPromotions().getOrThrow()
+            val promotionsEntity: List<PromotionEntity> = promotions.mapNotNull { it.toEntity(json) }
 
-    override suspend fun refreshProduct() {
-        withContext(dispatchers.io) {
-            val products = remoteDataSource.getProducts().getOrThrow()
-
-            val productsEntity = products.map { it.toEntity() }
-
-            localDataSource.saveProducts(productsEntity)
+            localDataSource.savePromotions(promotionsEntity)
         }
     }
 }

@@ -1,6 +1,7 @@
 package com.jmarser.cursotesting.productlist.presentation
 
 import com.jmarser.cursotesting.productlist.domain.model.Product
+import com.jmarser.cursotesting.productlist.domain.model.ProductWithPromotion
 import com.jmarser.cursotesting.productlist.domain.model.SortOption
 
 /**
@@ -14,7 +15,7 @@ sealed class ProductListUiState {
     data object Loading : ProductListUiState()
     data class Error(val message: String) : ProductListUiState()
     data class Success(
-        val productList: List<Product>,
+        val productList: List<ProductWithPromotion>,
         val categories: List<String>,
         val selectedCategory: String?,
         val sortOption: SortOption

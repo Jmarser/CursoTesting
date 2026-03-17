@@ -152,7 +152,7 @@ fun ProductListScreen(
                         LazyColumn() {
                             items(state.productList) { product ->
                                 ProductItem(
-                                    product = product,
+                                    productWithPromotion = product,
                                     onProductClick = {}
                                 )
                             }
