@@ -9,6 +9,7 @@ import androidx.navigation3.runtime.NavKey
 import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.ui.NavDisplay
+import com.jmarser.cursotesting.productlist.presentation.ProductListScreen
 
 @Composable
 fun NavGraph() {
@@ -17,7 +18,7 @@ fun NavGraph() {
 
     val entries = entryProvider < NavKey>{
         entry<Screen.ProductList>{
-            Text("ProductList", fontSize = 30.sp)
+            ProductListScreen()
         }
         entry<Screen.Cart>{
             Text("Cart", fontSize = 30.sp)
