@@ -35,6 +35,7 @@ import com.jmarser.cursotesting.productlist.presentation.components.FiltersMenu
 import com.jmarser.cursotesting.productlist.presentation.components.HomeTopAppBar
 import com.jmarser.cursotesting.productlist.presentation.components.ProductItem
 import com.jmarser.cursotesting.ui.theme.MyAppTheme
+import kotlinx.coroutines.flow.collect
 
 @Composable
 fun ProductListScreen(
@@ -44,7 +45,7 @@ fun ProductListScreen(
 
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
     val snackbarHostState: SnackbarHostState = remember { SnackbarHostState() }
-    val filterVisible by viewModel.filtersVisible.collectAsStateWithLifecycle()
+    val filterVisible by viewModel.filterVisible.collectAsStateWithLifecycle()
 
     LaunchedEffect(Unit) {
         viewModel.events.collect { event ->
