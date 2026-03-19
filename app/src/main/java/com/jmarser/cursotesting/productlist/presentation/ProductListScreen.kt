@@ -26,7 +26,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
@@ -34,13 +33,12 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.jmarser.cursotesting.productlist.presentation.components.FiltersMenu
 import com.jmarser.cursotesting.productlist.presentation.components.HomeTopAppBar
 import com.jmarser.cursotesting.productlist.presentation.components.ProductItem
-import com.jmarser.cursotesting.ui.theme.MyAppTheme
-import kotlinx.coroutines.flow.collect
 
 @Composable
 fun ProductListScreen(
     modifier: Modifier = Modifier,
-    viewModel: ProductListViewModel = hiltViewModel()
+    viewModel: ProductListViewModel = hiltViewModel(),
+    navigateToSettings: () -> Unit
 ) {
 
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
@@ -65,7 +63,8 @@ fun ProductListScreen(
                 filtersVisible = filterVisible,
                 onFiltersSelected = {showFilters ->
                     viewModel.setFilterVisible(showFilters)
-                }
+                },
+                onSettingsSelected = { navigateToSettings() }
             )
         }
     ) { paddingValues ->
@@ -163,16 +162,5 @@ fun ProductListScreen(
             }
         }
     }
-
 }
 
-@Preview(
-    showSystemUi = true,
-    showBackground = true
-)
-@Composable
-fun ProductListScreenPreview() {
-    MyAppTheme() {
-        ProductListScreen(modifier = Modifier)
-    }
-}

@@ -21,8 +21,8 @@ import androidx.compose.ui.tooling.preview.Preview
 fun HomeTopAppBar(
     modifier: Modifier = Modifier,
     filtersVisible: Boolean = false,
-    onFiltersSelected: (Boolean) -> Unit = {},
-    onSettingsSelected: () -> Unit = {}
+    onFiltersSelected: (Boolean) -> Unit,
+    onSettingsSelected: () -> Unit,
 ) {
     TopAppBar(
         title = {
