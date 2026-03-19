@@ -112,7 +112,7 @@ fun SettingsScreen(
                         }
 
                         Switch(
-                            checked = true,
+                            checked = uiState.inStockOnly,
                             onCheckedChange = {newState ->
                                 viewModel.setInStockOnly(newState)
                             }

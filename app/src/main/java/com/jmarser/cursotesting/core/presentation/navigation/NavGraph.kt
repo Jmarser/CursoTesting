@@ -9,6 +9,7 @@ import androidx.navigation3.runtime.NavKey
 import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.ui.NavDisplay
+import com.jmarser.cursotesting.ProductDetail.presentation.ProductDetailScreen
 import com.jmarser.cursotesting.productlist.presentation.ProductListScreen
 import com.jmarser.cursotesting.settings.presentation.SettingsScreen
 
@@ -22,6 +23,9 @@ fun NavGraph() {
             ProductListScreen(
                 navigateToSettings = {
                     backStack.add(Screen.Setting)
+                },
+                navigateToProductDetail = {productId ->
+                    backStack.add(Screen.ProductDetail(productId))
                 }
             )
         }
@@ -35,8 +39,13 @@ fun NavGraph() {
                 }
             )
         }
-        entry<Screen.ProductDetail>{
-            Text("ProductDetail", fontSize = 30.sp)
+        entry<Screen.ProductDetail>{route ->
+            ProductDetailScreen(
+                productId = route.productId,
+                onBack = {
+                    backStack.removeLastOrNull()
+                }
+            )
         }
     }
 

@@ -38,8 +38,9 @@ import com.jmarser.cursotesting.productlist.presentation.components.ProductItem
 fun ProductListScreen(
     modifier: Modifier = Modifier,
     viewModel: ProductListViewModel = hiltViewModel(),
-    navigateToSettings: () -> Unit
-) {
+    navigateToSettings: () -> Unit,
+    navigateToProductDetail: (String) -> Unit
+ ) {
 
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
     val snackbarHostState: SnackbarHostState = remember { SnackbarHostState() }
@@ -153,7 +154,9 @@ fun ProductListScreen(
                             items(state.productList) { product ->
                                 ProductItem(
                                     productWithPromotion = product,
-                                    onProductClick = {}
+                                    onProductClick = {
+                                        navigateToProductDetail(product.product.id)
+                                    }
                                 )
                             }
                         }
