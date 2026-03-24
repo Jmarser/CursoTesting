@@ -8,6 +8,9 @@ package com.jmarser.cursotesting.ProductDetail.presentation
  */
 
 sealed interface ProductDetailEvent {
-    data class ShowMessage(val msg: String): ProductDetailEvent
-    data class ShowError(val msg: String): ProductDetailEvent
+    data object UNKNOW_ERROR: ProductDetailEvent
+    data object NETWORK_ERROR: ProductDetailEvent
+    data object INSUFICIENT_STOCK_ERROR: ProductDetailEvent
+    data object SUCCESS_ADD_TO_CART: ProductDetailEvent
+
 }

@@ -2,7 +2,6 @@ package com.jmarser.cursotesting.productlist.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.jmarser.cursotesting.productlist.domain.model.Product
 import com.jmarser.cursotesting.productlist.domain.model.ProductPromotion
 import com.jmarser.cursotesting.productlist.domain.model.ProductWithPromotion
 import com.jmarser.cursotesting.productlist.domain.model.SortOption
@@ -58,34 +57,47 @@ class ProductListViewModel @Inject constructor(
     }
 
     fun loadProducts() {
+        _uiState.value = ProductListUiState.Loading
+        productsJob?.cancel()
 
         productsJob = combine(
-            getProductsUseCase(),
-            settingsRepository.selectedCategory,
-            settingsRepository.sortOption
-        ) {products, category, sortOption ->
-            var filteredProducs: List<ProductWithPromotion> = products
+            getProductsUseCase().onStart { println("DEBUG: useCase empezó") },
+            settingsRepository.selectedCategory.onStart {
+                println("DEBUG: selección de categoría empezó")
+                emit(null)
+            },
+            settingsRepository.sortOption.onStart {
+                println("DEBUG: ordenación empezó")
+                emit(SortOption.NONE)
+            }
+        ) { products, category, sortOption ->
 
-            if(category != null){
-                filteredProducs = filteredProducs.filter { it.product.category == category }
+            println("DEBUG: combine ejecutado con ${products.size} productos")
+
+            var filteredProducts: List<ProductWithPromotion> = products
+
+            if (category != null) {
+                filteredProducts = filteredProducts.filter { it.product.category == category }
             }
 
-            val sorted = when(sortOption){
-                SortOption.PRICE_ASC -> filteredProducs.sortedBy { effectivePrice(it) }
-                SortOption.PRICE_DESC -> filteredProducs.sortedByDescending { effectivePrice(it) }
+            val sorted = when (sortOption) {
+                SortOption.PRICE_ASC -> filteredProducts.sortedBy { effectivePrice(it) }
+                SortOption.PRICE_DESC -> filteredProducts.sortedByDescending { effectivePrice(it) }
                 SortOption.DISCOUNT -> {
-                    filteredProducs.sortedWith(
-                        compareByDescending<ProductWithPromotion>{
+                    filteredProducts.sortedByDescending { effectiveDiscountPercent(it) }
+                    filteredProducts.sortedWith(
+                        compareByDescending<ProductWithPromotion> {
                             effectiveDiscountPercent(it)
                         }.thenBy {
                             it.promotion == null
                         }
                     )
                 }
-                SortOption.NONE -> filteredProducs
+
+                SortOption.NONE -> filteredProducts
             }
 
-            val categories = products.map{it.product.category}.distinct().sorted()
+            val categories = products.map { it.product.category }.distinct().sorted()
 
             ProductListUiState.Success(
                 productList = sorted,
@@ -93,11 +105,8 @@ class ProductListViewModel @Inject constructor(
                 selectedCategory = category,
                 sortOption = sortOption
             )
-        }.onStart {
-            _uiState.value = ProductListUiState.Loading
-            productsJob?.cancel()
-        }.onEach { state ->
-            _uiState.value = state
+        }.onEach {
+            _uiState.value = it
         }.catch { e: Throwable ->
             _uiState.value = ProductListUiState.Error(e.message.orEmpty())
         }.launchIn(viewModelScope)
@@ -121,15 +130,15 @@ class ProductListViewModel @Inject constructor(
         }
     }
 
-    private fun effectiveDiscountPercent(item: ProductWithPromotion): Double{
-        return when(val promo: ProductPromotion? = item.promotion){
-            is ProductPromotion.Percent ->  promo.percent
+    private fun effectiveDiscountPercent(item: ProductWithPromotion): Double {
+        return when (val promo: ProductPromotion? = item.promotion) {
+            is ProductPromotion.Percent -> promo.percent
             else -> 0.0
         }
     }
 
-    private fun effectivePrice(item: ProductWithPromotion): Double{
-        return when(val promo: ProductPromotion? = item.promotion){
+    private fun effectivePrice(item: ProductWithPromotion): Double {
+        return when (val promo: ProductPromotion? = item.promotion) {
             is ProductPromotion.Percent -> promo.discountedPrice
             is ProductPromotion.BuyXPayY -> promo.unitPrice
             else -> item.product.price

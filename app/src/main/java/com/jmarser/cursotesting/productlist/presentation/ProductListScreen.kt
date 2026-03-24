@@ -30,6 +30,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.jmarser.cursotesting.cart.presentation.CartUiState
+import com.jmarser.cursotesting.cart.presentation.CartViewModel
 import com.jmarser.cursotesting.productlist.presentation.components.FiltersMenu
 import com.jmarser.cursotesting.productlist.presentation.components.HomeTopAppBar
 import com.jmarser.cursotesting.productlist.presentation.components.ProductItem
@@ -38,11 +40,14 @@ import com.jmarser.cursotesting.productlist.presentation.components.ProductItem
 fun ProductListScreen(
     modifier: Modifier = Modifier,
     viewModel: ProductListViewModel = hiltViewModel(),
+    cartViewModel: CartViewModel = hiltViewModel(),
     navigateToSettings: () -> Unit,
-    navigateToProductDetail: (String) -> Unit
+    navigateToProductDetail: (String) -> Unit,
+    navigateToCart: () -> Unit
  ) {
 
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
+    val cartUiState by cartViewModel.uiState.collectAsStateWithLifecycle()
     val snackbarHostState: SnackbarHostState = remember { SnackbarHostState() }
     val filterVisible by viewModel.filterVisible.collectAsStateWithLifecycle()
 
@@ -56,16 +61,29 @@ fun ProductListScreen(
         }
     }
 
+    val cartItemCount = remember(cartUiState) {
+        when(val state = cartUiState){
+            is CartUiState.Success -> {
+                state.cartItems.sumOf { it.cartItem.quantity }
+            }
+            else -> 0
+        }
+    }
+
 
     Scaffold(
         snackbarHost = { SnackbarHost(snackbarHostState) },
         topBar = {
             HomeTopAppBar(
                 filtersVisible = filterVisible,
+                cartItemCount = cartItemCount,
                 onFiltersSelected = {showFilters ->
                     viewModel.setFilterVisible(showFilters)
                 },
-                onSettingsSelected = { navigateToSettings() }
+                onSettingsSelected = { navigateToSettings() },
+                onNavigateToCart = {
+                    navigateToCart()
+                }
             )
         }
     ) { paddingValues ->

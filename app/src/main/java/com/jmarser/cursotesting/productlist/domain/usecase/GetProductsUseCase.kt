@@ -40,7 +40,7 @@ class GetProductsUseCase @Inject constructor(
                 products
             }
 
-            products.map { product ->
+            filteredProducts.map { product ->
                 val promotion = getPromotionForProduct(product, activePromotion)
                 ProductWithPromotion(product = product, promotion = promotion)
             }

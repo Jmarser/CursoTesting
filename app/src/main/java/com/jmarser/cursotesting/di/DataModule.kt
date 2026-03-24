@@ -5,7 +5,10 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.room.Room
-import com.jmarser.cursotesting.productlist.data.local.database.MarketDatabase
+import com.jmarser.cursotesting.cart.data.local.database.dao.CartDao
+import com.jmarser.cursotesting.cart.data.repository.CartRepositoryImpl
+import com.jmarser.cursotesting.cart.domain.repository.CartRepository
+import com.jmarser.cursotesting.core.data.local.database.MarketDatabase
 import com.jmarser.cursotesting.productlist.data.local.database.dao.ProductDao
 import com.jmarser.cursotesting.productlist.data.local.database.dao.PromotionDao
 import com.jmarser.cursotesting.productlist.data.repository.ProductRepositoryImpl
@@ -27,14 +30,20 @@ object DataModule {
 
     @Provides
     @Singleton
-    fun provideProductRepository(productRepositoryImpl: ProductRepositoryImpl): ProductRepository{
+    fun provideProductRepository(productRepositoryImpl: ProductRepositoryImpl): ProductRepository {
         return productRepositoryImpl
     }
 
     @Provides
     @Singleton
-    fun providePromotionRepository(promotionRepositoryImpl: PromotionRepositoryImpl): PromotionRepository{
+    fun providePromotionRepository(promotionRepositoryImpl: PromotionRepositoryImpl): PromotionRepository {
         return promotionRepositoryImpl
+    }
+
+    @Provides
+    @Singleton
+    fun provideCartRepository(cartRepositoryImpl: CartRepositoryImpl): CartRepository {
+        return cartRepositoryImpl
     }
 
     @Provides
@@ -49,25 +58,19 @@ object DataModule {
 
     @Provides
     @Singleton
-    fun providesDatabase(@ApplicationContext context: Context): MarketDatabase{
+    fun providesDatabase(@ApplicationContext context: Context): MarketDatabase {
         return Room.databaseBuilder(
             context = context,
             klass = MarketDatabase::class.java,
             name = "market_database"
-        ).build()
-    }
-
-/*    private val Context.dataStore: DataStore<Preferences> by preferencesDataStore("settings")
-
-    @Provides
-    @Singleton
-    fun provideDataStore(@ApplicationContext context: Context): DataStore<Preferences>{
-        return context.dataStore
+        ).fallbackToDestructiveMigration(dropAllTables = true)
+         .build()
     }
 
     @Provides
     @Singleton
-    fun provideSettingsRepository(settingsRepositoryImpl: SettingsRepositoryImpl): SettingsRepository{
-        return settingsRepositoryImpl
-    }*/
+    fun providesCartDao(database: MarketDatabase): CartDao {
+        return database.cartDao()
+    }
+
 }

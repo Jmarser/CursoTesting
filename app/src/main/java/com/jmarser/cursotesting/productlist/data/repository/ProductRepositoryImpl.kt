@@ -13,6 +13,7 @@ import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.sync.Mutex
@@ -38,6 +39,8 @@ class ProductRepositoryImpl @Inject constructor(
         return localDataSource.getAllProducts().map { entities ->
             entities.mapNotNull { it.toDomain() }
         }.onStart {
+            emit(emptyList())
+        }.onEach {
             refreshScope.launch {
                 if (!refreshMutex.tryLock()) return@launch
                 try {
@@ -48,8 +51,10 @@ class ProductRepositoryImpl @Inject constructor(
                     refreshMutex.unlock()
                 }
             }
-        }.catch {
-            // Log por hacer
+        }.catch {e ->
+            println("DEBUG: getProducts ProductRepository: ${e.message}")
+            e.printStackTrace()
+            emit(emptyList())
         }
     }
 
@@ -67,5 +72,10 @@ class ProductRepositoryImpl @Inject constructor(
 
             localDataSource.saveProducts(productsEntity)
         }
+    }
+
+    override fun getProductsByIds(ids: Set<String>): Flow<List<Product>> {
+        return localDataSource.getProductsByIds(ids)
+            .map { entities -> entities.mapNotNull { it.toDomain() } }
     }
 }

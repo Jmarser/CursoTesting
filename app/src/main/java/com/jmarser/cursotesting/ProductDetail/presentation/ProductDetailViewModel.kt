@@ -5,6 +5,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.toRoute
 import com.jmarser.cursotesting.ProductDetail.domain.usecase.GetProductDetailWithPromotionUseCase
+import com.jmarser.cursotesting.cart.domain.usecase.AddToCartUseCase
+import com.jmarser.cursotesting.core.domain.model.AppError
 import com.jmarser.cursotesting.core.presentation.navigation.Screen
 import dagger.hilt.android.lifecycle.HiltViewModel
 import jakarta.inject.Inject
@@ -18,6 +20,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.launch
 
 /**
  * Project: CursoTesting
@@ -28,7 +31,8 @@ import kotlinx.coroutines.flow.onEach
 
 @HiltViewModel
 class ProductDetailViewModel @Inject constructor(
-    private val getProductDetailWithPromotionUseCase: GetProductDetailWithPromotionUseCase
+    private val getProductDetailWithPromotionUseCase: GetProductDetailWithPromotionUseCase,
+    private val addToCartUseCase: AddToCartUseCase
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow<ProductDetailUiState>(ProductDetailUiState())
@@ -53,12 +57,35 @@ class ProductDetailViewModel @Inject constructor(
             }
             .catch { e: Throwable ->
                 _uiState.value = _uiState.value.copy(isLoading = false)
-                _events.emit(ProductDetailEvent.ShowError(e.message.orEmpty()))
+                if (e is AppError){
+                    handleError(e)
+                }else{
+                    handleError(AppError.UnknowError(e.message))
+                }
             }
             .launchIn(viewModelScope)
     }
 
     fun addToCart() {
+        val product = _uiState.value.item?.product?.id ?: return
+        viewModelScope.launch {
+            try{
+                addToCartUseCase(product)
+                _events.emit(ProductDetailEvent.SUCCESS_ADD_TO_CART)
+            }catch(e: AppError){
+                handleError(e)
+            }catch (e: Exception){
+                handleError(AppError.UnknowError(e.message))
+            }
+        }
+    }
 
+    private suspend fun handleError(e: AppError) {
+        val error = when(e){
+            AppError.DataBaseError, is AppError.UnknowError, AppError.Validation.QuantityMustPositive, AppError.NotFoundError -> ProductDetailEvent.UNKNOW_ERROR
+            is AppError.Validation.InsufficientStock -> ProductDetailEvent.INSUFICIENT_STOCK_ERROR
+            AppError.NetworkError -> ProductDetailEvent.NETWORK_ERROR
+        }
+        _events.emit(error)
     }
 }

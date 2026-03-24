@@ -10,6 +10,7 @@ import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.ui.NavDisplay
 import com.jmarser.cursotesting.ProductDetail.presentation.ProductDetailScreen
+import com.jmarser.cursotesting.cart.presentation.CartScreen
 import com.jmarser.cursotesting.productlist.presentation.ProductListScreen
 import com.jmarser.cursotesting.settings.presentation.SettingsScreen
 
@@ -26,11 +27,18 @@ fun NavGraph() {
                 },
                 navigateToProductDetail = {productId ->
                     backStack.add(Screen.ProductDetail(productId))
+                },
+                navigateToCart = {
+                    backStack.add(Screen.Cart)
                 }
             )
         }
         entry<Screen.Cart>{
-            Text("Cart", fontSize = 30.sp)
+            CartScreen(
+                onBack = {
+                    backStack.removeLastOrNull()
+                }
+            )
         }
         entry<Screen.Setting>{
             SettingsScreen(

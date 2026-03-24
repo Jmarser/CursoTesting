@@ -14,4 +14,5 @@ interface ProductRepository {
     fun getProducts(): Flow<List<Product>>
     fun getProductById(id: String): Flow<Product?>
     suspend fun refreshProduct()
+    fun getProductsByIds(ids: Set<String>): Flow<List<Product>>
 }
