@@ -10,28 +10,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b6a9757-4c0b-42c6-aabb-e066f0a68fa4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/cart/data/local/database/dao/CartDao.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/cart/data/local/database/entity/CartEntity.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/cart/data/mapper/CartItemMapper.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/cart/data/repository/CartRepositoryImpl.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/cart/domain/ex/PromotionsExtensions.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/cart/domain/model/CartItem.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/cart/domain/model/CartSummary.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/cart/domain/repository/CartRepository.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/cart/domain/usecase/AddToCartUseCase.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/cart/domain/usecase/GetCartItemsWithPromotionsUseCase.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/cart/domain/usecase/GetCartSummaryUseCase.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/cart/domain/usecase/UpdateCartItemUseCase.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/cart/presentation/CartEvent.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/cart/presentation/CartItemCard.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/cart/presentation/CartScreen.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/cart/presentation/CartSuccessScreen.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/cart/presentation/CartSummaryCard.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/cart/presentation/CartUiState.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/cart/presentation/CartViewModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/cart/presentation/model/CartItemWithPromotion.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/core/data/local/database/MarketDatabase.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/core/presentation/components/QuantitySelector.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.1.0/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.1.0/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.1.0/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0/fileHashes/fileHashes.bin" afterDir="false" />
@@ -39,24 +17,9 @@
       <change beforePath="$PROJECT_DIR$/.gradle/9.1.0/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/CursoTesting.app.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/ProductDetail/presentation/ProductDetailEvent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/ProductDetail/presentation/ProductDetailEvent.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/ProductDetail/presentation/ProductDetailScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/ProductDetail/presentation/ProductDetailScreen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/ProductDetail/presentation/ProductDetailViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/ProductDetail/presentation/ProductDetailViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/core/domain/model/AppError.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/core/domain/model/AppError.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/core/presentation/navigation/NavGraph.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/core/presentation/navigation/NavGraph.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/di/DataModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/di/DataModule.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/productlist/data/local/LocalDataSource.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/productlist/data/local/LocalDataSource.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/productlist/data/local/database/MarketDatabase.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/productlist/data/local/database/dao/ProductDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/productlist/data/local/database/dao/ProductDao.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/productlist/data/repository/ProductRepositoryImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/productlist/data/repository/ProductRepositoryImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/productlist/domain/repository/ProductRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/productlist/domain/repository/ProductRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/productlist/domain/usecase/GetProductsUseCase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/productlist/domain/usecase/GetProductsUseCase.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/productlist/presentation/ProductListScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/productlist/presentation/ProductListScreen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/productlist/presentation/ProductListViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/productlist/presentation/ProductListViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/productlist/presentation/components/HomeTopAppBar.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/productlist/presentation/components/HomeTopAppBar.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/problems/problems-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/problems/problems-report.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
