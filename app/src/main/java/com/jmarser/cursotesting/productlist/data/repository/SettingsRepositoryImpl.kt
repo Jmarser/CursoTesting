@@ -1,6 +1,5 @@
 package com.jmarser.cursotesting.productlist.data.repository
 
-import android.content.res.Resources
 import androidx.datastore.core.DataStore
 import androidx.datastore.core.IOException
 import androidx.datastore.preferences.core.Preferences

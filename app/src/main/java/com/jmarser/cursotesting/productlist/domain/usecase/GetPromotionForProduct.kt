@@ -19,16 +19,8 @@ class GetPromotionForProduct @Inject constructor() {
     operator fun invoke(product: Product, promotions: List<Promotion>): ProductPromotion?{
         val productPromos = promotions.filter { it.productIds.contains(product.id) }
 
-        val percentPromo = productPromos.filter { it.type == PromotionType.PERCENT }
-            .maxByOrNull { it.value }
-
-        if (percentPromo != null){
-            val percent = percentPromo.value.coerceIn(0.0, 100.0)
-            val discountPrice = (product.price * (1 - percent / 100.0)).roundTo2Decimals()
-            return ProductPromotion.Percent(percent = percent, discountedPrice = discountPrice)
-        }
-
-        val buyPayPromo = productPromos.firstOrNull(){ it.type == PromotionType.BUY_X_PAY_Y }
+        // En el caso de que un producto tenga dos promociones 2x1 y 3x1 al usar "firstOrNull" se cogería la primera que aparezca, con "maxByOrNull" se tomará la mayor, es decir la mejor para el usuario
+        val buyPayPromo = productPromos.maxByOrNull{ it.type == PromotionType.BUY_X_PAY_Y }
         if (buyPayPromo != null){
             val buy = buyPayPromo.buyQuantity ?: return null
             val pay = buyPayPromo.value.toInt().coerceIn(0, buy)
@@ -40,6 +32,15 @@ class GetPromotionForProduct @Inject constructor() {
                 label = "${buy}x${pay}",
                 unitPrice = price
             )
+        }
+
+        val percentPromo = productPromos.filter { it.type == PromotionType.PERCENT }
+            .maxByOrNull { it.value }
+
+        if (percentPromo != null){
+            val percent = percentPromo.value.coerceIn(0.0, 100.0)
+            val discountPrice = (product.price * (1 - percent / 100.0)).roundTo2Decimals()
+            return ProductPromotion.Percent(percent = percent, discountedPrice = discountPrice)
         }
         return null
     }

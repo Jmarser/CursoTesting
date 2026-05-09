@@ -70,6 +70,7 @@ dependencies {
     implementation(libs.hilt.navigation.compose)
     implementation(libs.hilt.lifecycle.viewmodel.compose)
     implementation(libs.core.ktx)
+    testImplementation(libs.junit.junit)
     ksp(libs.hilt.compiler.ksp)
 
     //Room
@@ -83,6 +84,7 @@ dependencies {
     //Coroutines
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.coroutines.android)
+    testImplementation(libs.kotlinx.coroutines.test)
 
     //ViewModel
     implementation(libs.lifecycle.viewmodel.compose)
@@ -104,4 +106,5 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
+    testImplementation(libs.mockk)
 }

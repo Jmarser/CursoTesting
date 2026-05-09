@@ -9,6 +9,8 @@ import com.jmarser.cursotesting.cart.data.local.database.dao.CartDao
 import com.jmarser.cursotesting.cart.data.repository.CartRepositoryImpl
 import com.jmarser.cursotesting.cart.domain.repository.CartRepository
 import com.jmarser.cursotesting.core.data.local.database.MarketDatabase
+import com.jmarser.cursotesting.core.data.util.ClockImpl
+import com.jmarser.cursotesting.core.domain.util.Clock
 import com.jmarser.cursotesting.productlist.data.local.database.dao.ProductDao
 import com.jmarser.cursotesting.productlist.data.local.database.dao.PromotionDao
 import com.jmarser.cursotesting.productlist.data.repository.ProductRepositoryImpl
@@ -71,6 +73,12 @@ object DataModule {
     @Singleton
     fun providesCartDao(database: MarketDatabase): CartDao {
         return database.cartDao()
+    }
+
+    @Provides
+    @Singleton
+    fun provideClock(clock: ClockImpl): Clock{
+        return clock
     }
 
 }

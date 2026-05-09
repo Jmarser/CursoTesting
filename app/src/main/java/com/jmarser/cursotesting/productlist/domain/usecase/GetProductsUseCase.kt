@@ -1,5 +1,6 @@
 package com.jmarser.cursotesting.productlist.domain.usecase
 
+import com.jmarser.cursotesting.core.domain.util.Clock
 import com.jmarser.cursotesting.productlist.domain.model.ProductWithPromotion
 import com.jmarser.cursotesting.productlist.domain.repository.ProductRepository
 import com.jmarser.cursotesting.productlist.domain.repository.PromotionRepository
@@ -20,23 +21,26 @@ class GetProductsUseCase @Inject constructor(
     private val productRepository: ProductRepository,
     private val promotionRepository: PromotionRepository,
     private val getPromotionForProduct: GetPromotionForProduct,
-    private val settingsRepository: SettingsRepository
+    private val settingsRepository: SettingsRepository,
+    private val clock: Clock
 ) {
 
     operator fun invoke(): Flow<List<ProductWithPromotion>> {
         return combine(
-            productRepository.getProducts(), promotionRepository.getActivePromotions(), settingsRepository.inStockOnly
+            productRepository.getProducts(),
+            promotionRepository.getActivePromotions(),
+            settingsRepository.inStockOnly
         ) { products, promotions, inStockOnly ->
 
-            val now = Instant.now()
+            val now = clock.now()
 
             val activePromotion = promotions.filter {
                 it.startTime <= now && it.endTime >= now
             }
 
-            val filteredProducts = if (inStockOnly){
+            val filteredProducts = if (inStockOnly) {
                 products.filter { it.stock > 0 }
-            }else{
+            } else {
                 products
             }
 
