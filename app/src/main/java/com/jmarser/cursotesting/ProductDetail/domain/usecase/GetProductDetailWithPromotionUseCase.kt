@@ -1,5 +1,6 @@
 package com.jmarser.cursotesting.ProductDetail.domain.usecase
 
+import com.jmarser.cursotesting.cart.domain.ex.activeAt
 import com.jmarser.cursotesting.core.domain.util.Clock
 import com.jmarser.cursotesting.productlist.domain.model.ProductWithPromotion
 import com.jmarser.cursotesting.productlist.domain.repository.ProductRepository
@@ -30,11 +31,7 @@ class GetProductDetailWithPromotionUseCase @Inject constructor(
             promotionRepository.getActivePromotions()
         ) {product, promotions ->
             val now = clock.now()
-
-            val activePromotions = promotions.filter {
-                it.startTime <= now && it.endTime >= now
-            }
-
+            val activePromotions = promotions.activeAt(now)
             product?.let {
                 val finalPromotion = getPromotionForProduct(it, activePromotions)
                 ProductWithPromotion(product = it, promotion = finalPromotion)

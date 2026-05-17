@@ -13,5 +13,9 @@ class FakeClock(private var currentTime: Instant = Instant.now()): Clock  {
         currentTime = currentTime.plusSeconds(seconds)
     }
 
+    fun backTime(seconds: Long){
+        currentTime = currentTime.minusSeconds(seconds)
+    }
+
     override fun now(): Instant = currentTime
 }

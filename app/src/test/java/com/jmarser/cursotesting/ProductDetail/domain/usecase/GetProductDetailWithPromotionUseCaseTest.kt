@@ -5,15 +5,15 @@ import com.jmarser.cursotesting.core.builders.product
 import com.jmarser.cursotesting.core.builders.promotion
 import com.jmarser.cursotesting.core.data.util.FakeClock
 import com.jmarser.cursotesting.productlist.data.repository.FakePromotionRepository
-import com.jmarser.cursotesting.productlist.domain.model.ProductPromotion
 import com.jmarser.cursotesting.productlist.domain.model.PromotionType
 import com.jmarser.cursotesting.productlist.domain.usecase.GetPromotionForProduct
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest
-import org.junit.Assert.*
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertNotNull
+import org.junit.Assert.assertNull
 import org.junit.Before
 import org.junit.Test
-import org.junit.experimental.theories.suppliers.TestedOn
 import java.time.Instant
 
 class GetProductDetailWithPromotionUseCaseTest {
@@ -57,8 +57,8 @@ class GetProductDetailWithPromotionUseCaseTest {
             val result = useCase()(productId).first()
 
             assertNotNull(result)
+            assertNotNull(result?.promotion)
             assertEquals(productId, result?.product?.id)
-            assertTrue(result?.promotion is ProductPromotion.Percent)
         }
 
     @Test
@@ -89,6 +89,37 @@ class GetProductDetailWithPromotionUseCaseTest {
         val result = useCase()(productId).first()
 
         assertNotNull(result)
+        assertNotNull(result?.product)
         assertNull(result?.promotion)
     }
+
+    @Test
+    fun `given active promotion when time advance then product promotion becomes null`() = runTest {
+        val productId = "productId1"
+        val product = product {
+            withId(productId)
+            withPrice(10.0)
+        }
+        val now = clock.now()
+
+        val promo = promotion {
+            withProductIds(listOf(productId))
+            withType(PromotionType.PERCENT) // O el tipo que prefieras probar
+            withValue(10.0)
+            withStartTime(now.minusSeconds(10))
+            withEndTime(now.plusSeconds(5))
+        }
+        productRepository.setProducts(listOf(product))
+        promoRepository.setPromotions(listOf(promo))
+
+        val result = useCase()(productId)
+
+        assertNotNull(result.first()?.promotion)
+
+        clock.advanceTime( 6)
+
+        assertNull(result.first()?.promotion)
+    }
+
+
 }

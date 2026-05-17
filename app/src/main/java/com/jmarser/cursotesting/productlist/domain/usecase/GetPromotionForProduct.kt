@@ -17,10 +17,15 @@ import javax.inject.Inject
 class GetPromotionForProduct @Inject constructor() {
 
     operator fun invoke(product: Product, promotions: List<Promotion>): ProductPromotion?{
+        println("REVISIÓN - ID Producto: '${product.id}'")
+        promotions.forEach {
+            println("REVISIÓN - Promo ID: ${it.id} | Tipo: ${it.type} | IDs Asociados: ${it.productIds}")
+        }
         val productPromos = promotions.filter { it.productIds.contains(product.id) }
+        println("REVISIÓN - Promos que pasaron el filtro de ID: ${productPromos.size}")
 
         // En el caso de que un producto tenga dos promociones 2x1 y 3x1 al usar "firstOrNull" se cogería la primera que aparezca, con "maxByOrNull" se tomará la mayor, es decir la mejor para el usuario
-        val buyPayPromo = productPromos.maxByOrNull{ it.type == PromotionType.BUY_X_PAY_Y }
+        val buyPayPromo = productPromos.firstOrNull(){ it.type == PromotionType.BUY_X_PAY_Y }
         if (buyPayPromo != null){
             val buy = buyPayPromo.buyQuantity ?: return null
             val pay = buyPayPromo.value.toInt().coerceIn(0, buy)

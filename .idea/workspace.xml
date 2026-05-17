@@ -10,27 +10,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b6a9757-4c0b-42c6-aabb-e066f0a68fa4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/core/data/util/ClockImpl.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/core/domain/util/Clock.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/jmarser/cursotesting/ProductDetail/domain/usecase/GetProductDetailWithPromotionUseCaseTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/jmarser/cursotesting/cart/data/repository/FakeCartRepositoryImpl.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/jmarser/cursotesting/cart/data/repository/FakeProductRepositoryImpl.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/jmarser/cursotesting/cart/domain/ex/PromotionsExtensionsTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/jmarser/cursotesting/cart/domain/usecase/AddToCartUseCaseTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/jmarser/cursotesting/cart/domain/usecase/GetCartItemsWithPromotionsUseCaseTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/jmarser/cursotesting/cart/domain/usecase/GetCartSummaryUseCaseTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/jmarser/cursotesting/cart/domain/usecase/UpdateCartItemUseCaseTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/jmarser/cursotesting/core/builders/CartItemBuilder.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/jmarser/cursotesting/core/builders/ProductBuilder.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/jmarser/cursotesting/core/builders/PromotionBuilder.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/jmarser/cursotesting/core/data/util/FakeClock.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/jmarser/cursotesting/core/utils/CoroutineTestExample.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/jmarser/cursotesting/productlist/data/repository/FakePromotionRepository.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/jmarser/cursotesting/productlist/data/repository/FakeSettingsRepository.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/jmarser/cursotesting/productlist/domain/usecase/GetProductsUseCaseTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/jmarser/cursotesting/productlist/domain/usecase/GetPromotionForProductTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/jmarser/cursotesting/MainViewModelTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/jmarser/cursotesting/ProductDetail/presentation/ProductDetailViewModelTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/jmarser/cursotesting/cart/presentation/CartViewModelTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/jmarser/cursotesting/core/stubs/FailingProductRepositoryStub.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/jmarser/cursotesting/core/utils/MainDispatcherRule.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/jmarser/cursotesting/productlist/presentation/ProductListViewModelMockTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/jmarser/cursotesting/productlist/presentation/ProductListViewModelTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/jmarser/cursotesting/settings/presentation/SettingsViewModelTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.1.0/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0/checksums/md5-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.1.0/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.1.0/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.1.0/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0/executionHistory/executionHistory.lock" afterDir="false" />
@@ -43,12 +31,13 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/ProductDetail/domain/usecase/GetProductDetailWithPromotionUseCase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/ProductDetail/domain/usecase/GetProductDetailWithPromotionUseCase.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/cart/domain/usecase/GetCartItemsWithPromotionsUseCase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/cart/domain/usecase/GetCartItemsWithPromotionsUseCase.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/cart/domain/usecase/GetCartSummaryUseCase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/cart/domain/usecase/GetCartSummaryUseCase.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/di/DataModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/di/DataModule.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/productlist/data/repository/SettingsRepositoryImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/productlist/data/repository/SettingsRepositoryImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/productlist/domain/usecase/GetProductsUseCase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/productlist/domain/usecase/GetProductsUseCase.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/ProductDetail/presentation/ProductDetailViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/ProductDetail/presentation/ProductDetailViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/cart/presentation/CartViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/cart/presentation/CartViewModel.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/productlist/domain/usecase/GetPromotionForProduct.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/productlist/domain/usecase/GetPromotionForProduct.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/productlist/presentation/ProductListViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/productlist/presentation/ProductListViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/settings/presentation/SettingsViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/settings/presentation/SettingsViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/jmarser/cursotesting/ProductDetail/domain/usecase/GetProductDetailWithPromotionUseCaseTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/jmarser/cursotesting/ProductDetail/domain/usecase/GetProductDetailWithPromotionUseCaseTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/jmarser/cursotesting/core/data/util/FakeClock.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/jmarser/cursotesting/core/data/util/FakeClock.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/problems/problems-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/problems/problems-report.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
     </list>
@@ -130,6 +119,9 @@
     "Gradle.AddToCartUseCaseTest.valid_product_calls_addToCart_with_expect_values.executor": "Run",
     "Gradle.AddToCartUseCaseTest.zero_quantity_does_not_call_any_repository.executor": "Run",
     "Gradle.AddToCartUseCaseTest.zero_quantity_throws_quantityMustBePositive.executor": "Run",
+    "Gradle.CartViewModelTest.executor": "Debug",
+    "Gradle.CartViewModelTest.given cart data when initialized then emit success state.executor": "Run",
+    "Gradle.CartViewModelTest.given insufficient stock when update quantity then emits error event.executor": "Run",
     "Gradle.DoubleExTest.roundTo2Decimals_roundsCorrectly.executor": "Run",
     "Gradle.GetCartItemsWithPromotionsUseCaseTest.executor": "Run",
     "Gradle.GetCartItemsWithPromotionsUseCaseTest.given active promotion when time advances then flow emits update list without promotion.executor": "Run",
@@ -148,6 +140,8 @@
     "Gradle.GetCartSummaryUseCaseTest.given multiple products with different promotions when invoke them sums all correctly.executor": "Run",
     "Gradle.GetCartSummaryUseCaseTest.given percent promotion when invoke then calculate correctly.executor": "Run",
     "Gradle.GetCartSummaryUseCaseTest.given product in cart does not exist in repository when invoke then ignore it.executor": "Run",
+    "Gradle.GetProductDetailWithPromotionUseCaseTest.executor": "Run",
+    "Gradle.GetProductDetailWithPromotionUseCaseTest.given active promotion when time advance then product promotion becomes null.executor": "Run",
     "Gradle.GetProductDetailWithPromotionUseCaseTest.given product and active promotion when invoke then return product with promotion.executor": "Run",
     "Gradle.GetProductDetailWithPromotionUseCaseTest.given product does not exist when invoke then emit null.executor": "Run",
     "Gradle.GetProductDetailWithPromotionUseCaseTest.given product with expired promotion when invoke then return product with null promotion.executor": "Run",
@@ -160,6 +154,15 @@
     "Gradle.GetPromotionForProductTest.given multiple percent promotions then invoke then returns highest discount.executor": "Run",
     "Gradle.GetPromotionForProductTest.given percentage over 100 then it should be capped at 100.executor": "Run",
     "Gradle.GetPromotionForProductTest.given_buy_x_pay_and_percent_promotions_when_invoke_then_prioritizes_buy_x_pay_y.executor": "Run",
+    "Gradle.MainViewModelTest.executor": "Run",
+    "Gradle.ProductDetailViewModelTest.given missing product id when load product then end with item null.executor": "Run",
+    "Gradle.ProductDetailViewModelTest.given valid product id when load product then emits item.executor": "Run",
+    "Gradle.ProductListViewModelMockTest.executor": "Run",
+    "Gradle.ProductListViewModelTest.executor": "Run",
+    "Gradle.ProductListViewModelTest.given price asc sort option when set sort option then sorts by effective price.executor": "Run",
+    "Gradle.ProductListViewModelTest.given products when initialized then emits success state.executor": "Run",
+    "Gradle.ProductListViewModelTest.given repository error when loading products then emits error state.executor": "Run",
+    "Gradle.ProductListViewModelTest.given selected category when set category then filters products.executor": "Run",
     "Gradle.PromotionsExtensionsTest.executor": "Run",
     "Gradle.PromotionsExtensionsTest.given emptyList when activeAt then return empty.executor": "Run",
     "Gradle.PromotionsExtensionsTest.given exact end time promotion when activeAt then include.executor": "Run",
@@ -167,6 +170,12 @@
     "Gradle.PromotionsExtensionsTest.given expired promotion when activeAt then exclude.executor": "Run",
     "Gradle.PromotionsExtensionsTest.given future promotion when atciveAt then exclude.executor": "Run",
     "Gradle.PromotionsExtensionsTest.given on going promotion when activeAt then exclude.executor": "Run",
+    "Gradle.SettingsViewModelTest.example test crash.executor": "Run",
+    "Gradle.SettingsViewModelTest.executor": "Run",
+    "Gradle.SettingsViewModelTest.given respository with values when viewmodel is intialized then ui state is updated.executor": "Run",
+    "Gradle.SettingsViewModelTest.given viewModel when repository change externally when ui state update automatically.executor": "Run",
+    "Gradle.SettingsViewModelTest.given viewmodel when in stock only is changed then ui stated and repository are update.executor": "Run",
+    "Gradle.SettingsViewModelTest.given viewmodel when theme mode is changed then ui stated and repository are update.executor": "Run",
     "Gradle.UpdateCartItemUseCaseTest.given negative quantity when invokes then throws quantity must be positive.executor": "Run",
     "Gradle.UpdateCartItemUseCaseTest.given zero quantity when invokes then removes items from cart.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
@@ -182,7 +191,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
     "git-widget-placeholder": "feature/unit__test",
     "kotlin-language-version-configured": "true",
-    "last_directory_selection": "E:/trabajosAndroid/CursoTesting/app/src/test/java/com/jmarser/cursotesting",
+    "last_directory_selection": "E:/trabajosAndroid/CursoTesting/app/src/test/java/com/jmarser/cursotesting/ProductDetail",
     "settings.editor.selected.configurable": "configurable.group.build"
   }
 }]]></component>
@@ -191,20 +200,21 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
-      <recent name="com.jmarser.cursotesting.ProductDetail.domain.usecase" />
-      <recent name="com.jmarser.cursotesting.cart.domain.usecase" />
-      <recent name="com.jmarser.cursotesting.core.data.util" />
-      <recent name="com.jmarser.cursotesting.productlist.data.repository" />
-      <recent name="com.jmarser.cursotesting.productlist.domain.usecase" />
+      <recent name="com.jmarser.cursotesting.ProductDetail.presentation" />
+      <recent name="com.jmarser.cursotesting" />
+      <recent name="com.jmarser.cursotesting.cart.presentation" />
+      <recent name="com.jmarser.cursotesting.productlist.presentation" />
+      <recent name="com.jmarser.cursotesting.settings.presentation" />
     </key>
     <key name="K2MoveDeclarationsDialog.RECENT_PACKAGE_KEY">
+      <recent name="com.jmarser.cursotesting.core.utils" />
       <recent name="com.jmarser.cursotesting.cart.domain.repository" />
       <recent name="com.jmarser.cursotesting.cart.data.repository" />
       <recent name="com.jmarser.cursotesting.core.data.local.database" />
       <recent name="com.jmarser.cursotesting.productlist.presentation.components" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.GetProductDetailWithPromotionUseCaseTest.given product and active promotion when invoke then return product with promotion">
+  <component name="RunManager" selected="Gradle.ProductDetailViewModelTest.given missing product id when load product then end with item null">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="CursoTesting.app" />
       <option name="ANDROID_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
@@ -277,7 +287,7 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GetCartSummaryUseCaseTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="GetProductDetailWithPromotionUseCaseTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -290,7 +300,38 @@
           <list>
             <option value=":app:testDebugUnitTest" />
             <option value="--tests" />
-            <option value="&quot;com.jmarser.cursotesting.cart.domain.usecase.GetCartSummaryUseCaseTest&quot;" />
+            <option value="&quot;com.jmarser.cursotesting.ProductDetail.domain.usecase.GetProductDetailWithPromotionUseCaseTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
+      <EXTENSION ID="com.android.tools.idea.testartifacts.testsuite.GradleRunConfigurationExtension">
+        <com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>false</com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>
+        <android.execution.deploysToLocalDevice>false</android.execution.deploysToLocalDevice>
+      </EXTENSION>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <GradleProfilingDisabled>false</GradleProfilingDisabled>
+      <GradleCoverageDisabled>false</GradleCoverageDisabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="GetProductDetailWithPromotionUseCaseTest.given active promotion when time advance then product promotion becomes null" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":app:testDebugUnitTest" />
+            <option value="--tests" />
+            <option value="&quot;com.jmarser.cursotesting.ProductDetail.domain.usecase.GetProductDetailWithPromotionUseCaseTest.given active promotion when time advance then product promotion becomes null&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -339,7 +380,7 @@
       <GradleCoverageDisabled>false</GradleCoverageDisabled>
       <method v="2" />
     </configuration>
-    <configuration name="GetProductDetailWithPromotionUseCaseTest.given product does not exist when invoke then emit null" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ProductDetailViewModelTest.given missing product id when load product then end with item null" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -352,7 +393,7 @@
           <list>
             <option value=":app:testDebugUnitTest" />
             <option value="--tests" />
-            <option value="&quot;com.jmarser.cursotesting.ProductDetail.domain.usecase.GetProductDetailWithPromotionUseCaseTest.given product does not exist when invoke then emit null&quot;" />
+            <option value="&quot;com.jmarser.cursotesting.ProductDetail.presentation.ProductDetailViewModelTest.given missing product id when load product then end with item null&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -370,7 +411,7 @@
       <GradleCoverageDisabled>false</GradleCoverageDisabled>
       <method v="2" />
     </configuration>
-    <configuration name="GetProductDetailWithPromotionUseCaseTest.given product with expired promotion when invoke then return product with null promotion" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ProductDetailViewModelTest.given valid product id when load product then emits item" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -383,38 +424,7 @@
           <list>
             <option value=":app:testDebugUnitTest" />
             <option value="--tests" />
-            <option value="&quot;com.jmarser.cursotesting.ProductDetail.domain.usecase.GetProductDetailWithPromotionUseCaseTest.given product with expired promotion when invoke then return product with null promotion&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
-      <EXTENSION ID="com.android.tools.idea.testartifacts.testsuite.GradleRunConfigurationExtension">
-        <com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>false</com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>
-        <android.execution.deploysToLocalDevice>false</android.execution.deploysToLocalDevice>
-      </EXTENSION>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <GradleProfilingDisabled>false</GradleProfilingDisabled>
-      <GradleCoverageDisabled>false</GradleCoverageDisabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="GetPromotionForProductTest.given percentage over 100 then it should be capped at 100" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":app:testDebugUnitTest" />
-            <option value="--tests" />
-            <option value="&quot;com.jmarser.cursotesting.productlist.domain.usecase.GetPromotionForProductTest.given percentage over 100 then it should be capped at 100&quot;" />
+            <option value="&quot;com.jmarser.cursotesting.ProductDetail.presentation.ProductDetailViewModelTest.given valid product id when load product then emits item&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -434,11 +444,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.ProductDetailViewModelTest.given missing product id when load product then end with item null" />
+        <item itemvalue="Gradle.ProductDetailViewModelTest.given valid product id when load product then emits item" />
+        <item itemvalue="Gradle.GetProductDetailWithPromotionUseCaseTest" />
         <item itemvalue="Gradle.GetProductDetailWithPromotionUseCaseTest.given product and active promotion when invoke then return product with promotion" />
-        <item itemvalue="Gradle.GetProductDetailWithPromotionUseCaseTest.given product with expired promotion when invoke then return product with null promotion" />
-        <item itemvalue="Gradle.GetProductDetailWithPromotionUseCaseTest.given product does not exist when invoke then emit null" />
-        <item itemvalue="Gradle.GetPromotionForProductTest.given percentage over 100 then it should be capped at 100" />
-        <item itemvalue="Gradle.GetCartSummaryUseCaseTest" />
+        <item itemvalue="Gradle.GetProductDetailWithPromotionUseCaseTest.given active promotion when time advance then product promotion becomes null" />
       </list>
     </recent_temporary>
   </component>

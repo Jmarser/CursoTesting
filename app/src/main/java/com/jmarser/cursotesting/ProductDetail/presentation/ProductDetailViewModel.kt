@@ -1,13 +1,10 @@
 package com.jmarser.cursotesting.ProductDetail.presentation
 
-import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import androidx.navigation.toRoute
 import com.jmarser.cursotesting.ProductDetail.domain.usecase.GetProductDetailWithPromotionUseCase
 import com.jmarser.cursotesting.cart.domain.usecase.AddToCartUseCase
 import com.jmarser.cursotesting.core.domain.model.AppError
-import com.jmarser.cursotesting.core.presentation.navigation.Screen
 import dagger.hilt.android.lifecycle.HiltViewModel
 import jakarta.inject.Inject
 import kotlinx.coroutines.Job
