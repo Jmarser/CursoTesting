@@ -1,7 +1,6 @@
 package com.jmarser.cursotesting.settings.presentation
 
 
-import android.graphics.Color
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
