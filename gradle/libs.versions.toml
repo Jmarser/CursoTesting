@@ -23,6 +23,7 @@ coreKtxVersion = "1.18.0"
 junitJunit = "4.12"
 mockk = "1.14.9"
 turbine = "1.2.1"
+mockwebserver = "5.3.2"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -85,6 +86,8 @@ androidx-compose-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-te
 junit-junit = { group = "junit", name = "junit", version.ref = "junitJunit" }
 mockk = {group = "io.mockk", name = "mockk", version.ref = "mockk"}
 turbine = {module = "app.cash.turbine:turbine", version.ref = "turbine"}
+mockwebserver = {group = "com.squareup.okhttp3", name = "mockwebserver", version.ref = "mockwebserver"}
+hilt-android-testing = {group = "com.google.dagger", name = "hilt-android-testing", version.ref = "hilt"}
 
 
 [plugins]

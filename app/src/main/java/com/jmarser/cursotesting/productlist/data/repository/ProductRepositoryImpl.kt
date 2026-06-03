@@ -39,19 +39,17 @@ class ProductRepositoryImpl @Inject constructor(
         return localDataSource.getAllProducts().map { entities ->
             entities.mapNotNull { it.toDomain() }
         }.onStart {
-            emit(emptyList())
-        }.onEach {
             refreshScope.launch {
                 if (!refreshMutex.tryLock()) return@launch
                 try {
                     refreshProduct()
-                }catch (e: Exception){
+                } catch (e: Exception) {
 
-                }finally {
+                } finally {
                     refreshMutex.unlock()
                 }
             }
-        }.catch {e ->
+        }.catch { e ->
             println("DEBUG: getProducts ProductRepository: ${e.message}")
             e.printStackTrace()
             emit(emptyList())
@@ -60,16 +58,14 @@ class ProductRepositoryImpl @Inject constructor(
 
     override fun getProductById(id: String): Flow<Product?> {
         return localDataSource.getProductById(id)
-            .map { entity ->  entity?.toDomain() }
+            .map { entity -> entity?.toDomain() }
             .catch { e -> }
     }
 
     override suspend fun refreshProduct() {
         withContext(dispatchers.io) {
             val products = remoteDataSource.getProducts().getOrThrow()
-
             val productsEntity = products.map { it.toEntity() }
-
             localDataSource.saveProducts(productsEntity)
         }
     }

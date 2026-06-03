@@ -20,7 +20,8 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        //testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "com.jmarser.cursotesting.HiltTestRunner"
     }
 
     buildTypes {
@@ -109,4 +110,7 @@ dependencies {
     testImplementation(libs.mockk)
     testImplementation(libs.turbine)
     androidTestImplementation(libs.turbine)
+    testImplementation(libs.mockwebserver)
+    androidTestImplementation(libs.mockwebserver)
+    androidTestImplementation(libs.hilt.android.testing)
 }

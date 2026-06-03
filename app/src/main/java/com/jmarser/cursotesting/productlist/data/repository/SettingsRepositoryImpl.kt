@@ -60,7 +60,7 @@ class SettingsRepositoryImpl @Inject constructor(
         dataStoreFlow.map { preferences -> preferences[SELECTED_CATEGORY_KEY] }
 
     override val filtersVisible: Flow<Boolean> =
-        dataStoreFlow.map { preferences -> preferences[FILTERS_VISIBLE_KEY] ?: false }
+        dataStoreFlow.map { preferences -> preferences[FILTERS_VISIBLE_KEY] ?: true }
 
     override val sortOption: Flow<SortOption> = dataStoreFlow.map { preferences ->
         val raw = preferences[SORT_OPTION_KEY]

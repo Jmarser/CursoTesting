@@ -5,19 +5,19 @@
       <SelectionState runConfigName="app">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="LocalDataSourceTest">
+      <SelectionState runConfigName="given_exist_cartItems_when_getCartItemId_exists_then_returns_cartItem()">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="given_multiple_cartItem_when_delete_cartItem_then_returns_success_and_cartItem_list_update()">
+      <SelectionState runConfigName="given_exist_cartItems_when_clearCart_isCalled_then_returns_empty_list()">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="given_multiple_promotions_when_clearPromotions_then_returns_empty_list()">
+      <SelectionState runConfigName="given_exist_cartItems_when_deleteCartItem_no_exists_then_returns_error()">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="given_multiple_promotions_when_replaceAll_then_returns_new_promotions()">
+      <SelectionState runConfigName="given_nonExistingItem_when_updateQuantity_isCalled_then_throws_NotFoundError()">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="PromotionDaoTest">
+      <SelectionState runConfigName="CartRepositoryImplTest">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
     </selectionStates>
