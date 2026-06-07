@@ -1,5 +1,6 @@
 package com.jmarser.cursotesting.productlist.data.repository
 
+import androidx.annotation.VisibleForTesting
 import androidx.datastore.core.DataStore
 import androidx.datastore.core.IOException
 import androidx.datastore.preferences.core.Preferences
@@ -14,6 +15,7 @@ import com.jmarser.cursotesting.productlist.domain.repository.SettingsRepository
 import jakarta.inject.Inject
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 
 /**
@@ -104,5 +106,11 @@ class SettingsRepositoryImpl @Inject constructor(
         dataStore.edit { preferences ->
             preferences[SORT_OPTION_KEY] = value.name
         }
+    }
+
+    @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
+    suspend fun clear(){
+        dataStore.edit { it.clear() }
+        dataStore.data.first{it.asMap().isEmpty()}
     }
 }

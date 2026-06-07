@@ -10,32 +10,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b6a9757-4c0b-42c6-aabb-e066f0a68fa4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/app/CursoTesting.app.androidTest.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/app/CursoTesting.app.main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/app/CursoTesting.app.unitTest.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/androidTest/assets/cart_items.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/androidTest/assets/cart_items_empty.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/androidTest/assets/promotions_buy_x_pay_y.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/androidTest/assets/promotions_empty.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/androidTest/assets/promotions_percent.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/jmarser/cursotesting/HiltTestRunner.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/jmarser/cursotesting/cart/data/repository/CartRepositoryImplTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/jmarser/cursotesting/core/di/TestDataModule.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/jmarser/cursotesting/core/di/TestDataStoreModule.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/jmarser/cursotesting/core/di/TestDispatchersModule.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/jmarser/cursotesting/core/di/TestNetworkModule.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/jmarser/cursotesting/core/mockwebserver/MockWebServerUrlHolder.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/jmarser/cursotesting/core/mockwebserver/rules/MockWebServerRule.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/jmarser/cursotesting/productlist/data/repository/ProductRepositoryImplTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/jmarser/cursotesting/productlist/data/repository/PromotionRepositoryImplTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/jmarser/cursotesting/productlist/data/repository/SettingsRepositoryImplTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/debug/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/jmarser/cursotesting/productlist/data/remote/RemoteDataSourceTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/resources/products_empty.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/resources/products_success.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/resources/promotions_empty.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/resources/promotions_success.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/androidTest/assets/product_list_default.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/androidTest/assets/product_list_updated.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/jmarser/cursotesting/cart/presentation/CartViewModelIntegrationTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/jmarser/cursotesting/core/OfflineFirstIntegrationTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/jmarser/cursotesting/core/mockwebserver/MarketApiDispatcher.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/jmarser/cursotesting/core/mockwebserver/ProductErrorDispatcher.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/jmarser/cursotesting/core/utils/JsonUtils.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/jmarser/cursotesting/productlist/presentation/ProductListViewModelIntegrationTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/sharedTest/java/com/jmarser/cursotesting/core/utils/MainDispatcherRule.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.1.0/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.1.0/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0/checksums/md5-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.1.0/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0/checksums/sha1-checksums.bin" afterDir="false" />
@@ -45,16 +28,26 @@
       <change beforePath="$PROJECT_DIR$/.gradle/9.1.0/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.1.0/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/androidTestResultsUserPreferences.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/androidTestResultsUserPreferences.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/productlist/data/repository/ProductRepositoryImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/productlist/data/repository/ProductRepositoryImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/androidTest/assets/cart_items.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/androidTest/assets/cart_items_empty.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/jmarser/cursotesting/productlist/data/repository/PromotionRepositoryImplTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/jmarser/cursotesting/productlist/data/repository/PromotionRepositoryImplTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/jmarser/cursotesting/productlist/data/repository/SettingsRepositoryImplTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/jmarser/cursotesting/productlist/data/repository/SettingsRepositoryImplTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/productlist/data/repository/SettingsRepositoryImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/productlist/data/repository/SettingsRepositoryImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/jmarser/cursotesting/MainViewModelTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/jmarser/cursotesting/MainViewModelTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/jmarser/cursotesting/ProductDetail/presentation/ProductDetailViewModelTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/jmarser/cursotesting/ProductDetail/presentation/ProductDetailViewModelTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/jmarser/cursotesting/cart/presentation/CartViewModelTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/jmarser/cursotesting/cart/presentation/CartViewModelTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/jmarser/cursotesting/core/utils/MainDispatcherRule.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/jmarser/cursotesting/productlist/presentation/ProductListViewModelMockTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/jmarser/cursotesting/productlist/presentation/ProductListViewModelMockTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/jmarser/cursotesting/productlist/presentation/ProductListViewModelTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/jmarser/cursotesting/productlist/presentation/ProductListViewModelTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/jmarser/cursotesting/settings/presentation/SettingsViewModelTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/jmarser/cursotesting/settings/presentation/SettingsViewModelTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/problems/problems-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/problems/problems-report.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -94,9 +87,9 @@
         <option value="Kotlin File" />
         <option value="File composable" />
         <option value="Kotlin Interface" />
-        <option value="Kotlin Class" />
         <option value="Kotlin Object" />
         <option value="Kotlin JUnit4 Test Class" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -127,18 +120,26 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Android App.app.executor": "Run",
+    "Android Instrumented Tests.All Tests.executor": "Run",
     "Android Instrumented Tests.CartDaoTest.executor": "Run",
     "Android Instrumented Tests.CartRepositoryImplTest.executor": "Run",
+    "Android Instrumented Tests.CartViewModelIntegrationTest.executor": "Run",
     "Android Instrumented Tests.LocalDataSourceTest.executor": "Run",
+    "Android Instrumented Tests.OfflineFirstIntegrationTest.executor": "Run",
     "Android Instrumented Tests.ProductDaoTest.executor": "Run",
+    "Android Instrumented Tests.ProductListViewModelIntegrationTest.executor": "Run",
     "Android Instrumented Tests.ProductRepositoryImplTest.executor": "Run",
     "Android Instrumented Tests.PromotionDaoTest.executor": "Run",
     "Android Instrumented Tests.PromotionRepositoryImplTest.executor": "Run",
     "Android Instrumented Tests.SettingsRepositoryImplTest.executor": "Run",
     "Android Instrumented Tests.given_active_promotions_json_when_refresh_isCalled_then_flow_emits_active_promotions().executor": "Run",
     "Android Instrumented Tests.given_buyX_payY_json_when_refresh_isCalled_then_domain_maps_quantities_correctly().executor": "Run",
+    "Android Instrumented Tests.given_cachedProducts_and_failed_refresh_when_getProducts_then_returns_previusCache().executor": "Run",
+    "Android Instrumented Tests.given_cachedProducts_when_refresh_with_new_payload_then_contains_only_latest_products().executor": "Run",
     "Android Instrumented Tests.given_cached_products_when_refresh_with_new_products_then_flow_emits_updated_data().executor": "Run",
     "Android Instrumented Tests.given_cartItems_json_when_getAllCartItems_isCalled_then_returns_list().executor": "Run",
+    "Android Instrumented Tests.given_cartWithItems_when_viewModel_collectsUiState_then_success_with_summary().executor": "Run",
+    "Android Instrumented Tests.given_dairy_category_selected_when_filtering_then_only_dairy_product_are_show().executor": "Run",
     "Android Instrumented Tests.given_emptyProducts_json_when_refhresh_isCalled_then_getProducts_emits_emptyList().executor": "Run",
     "Android Instrumented Tests.given_empty_cartItems_json_when_getAllCartItems_isCalled_then_emits_emptyList().executor": "Run",
     "Android Instrumented Tests.given_empty_database_when_getAllCartItems_then_emits_empty_list().executor": "Run",
@@ -172,8 +173,10 @@
     "Android Instrumented Tests.given_no_data_saved_when_theme_mode_isRead_then_returns_default_system().executor": "Run",
     "Android Instrumented Tests.given_nonExistingItem_when_updateQuantity_isCalled_then_throws_NotFoundError().executor": "Run",
     "Android Instrumented Tests.given_old_products_when_replaceAll_then_only_new_products_remain().executor": "Run",
+    "Android Instrumented Tests.given_product_with_multipleQuantity_when_decrease_one_unit_then_quantity_update().executor": "Run",
     "Android Instrumented Tests.given_products_endpoint_when_refresh_isCalled_then_request_is_get_to_correct_path().executor": "Run",
     "Android Instrumented Tests.given_products_json_when_refresh_and_getProductById_then_returns_correct_product().executor": "Run",
+    "Android Instrumented Tests.given_products_loaded_when_sortingByPriceAsc_then_list_is_correctly_ordered().executor": "Run",
     "Android Instrumented Tests.given_promotions_endpoint_when_refresh_isCalled_then_request_is_get_to_correct_path().executor": "Run",
     "Android Instrumented Tests.given_repository_when_set_filter_visible_to_false_then_persist_value().executor": "Run",
     "Android Instrumented Tests.given_repository_when_set_in_stock_only_to_true_then_persist_value().executor": "Run",
@@ -181,6 +184,10 @@
     "Android Instrumented Tests.given_repository_when_set_sort_options_then_persist_value().executor": "Run",
     "Android Instrumented Tests.given_repository_when_set_theme_mode_then_persist_value().executor": "Run",
     "Android Instrumented Tests.given_server_returns_500_when_refresh_isCalled_then_it_throws_exception().executor": "Run",
+    "Android Instrumented Tests.given_singleProduct_when_decrease_to_zero_then_cart_becomes_empty().executor": "Run",
+    "Android Instrumented Tests.given_singleProduct_when_increaseQuantity_then_quantity_updates().executor": "Run",
+    "Android Instrumented Tests.given_success_fullApi_when_viewModel_loads_then_show_products().executor": "Run",
+    "Android Instrumented Tests.given_success_fullRefresh_when_getProducts_then_room_contains_remote_products().executor": "Run",
     "Android Instrumented Tests.given_three_cartItems_when_getProductsByIds_then_returns_request_subset().executor": "Run",
     "Android Instrumented Tests.given_three_products_when_getProductsByIds_then_returns_request_subset().executor": "Run",
     "Android Instrumented Tests.given_validProductsJson_when_refresh_isCalled_then_database_emit_products_from_room().executor": "Run",
@@ -258,6 +265,7 @@
     "Gradle.SettingsViewModelTest.given viewModel when repository change externally when ui state update automatically.executor": "Run",
     "Gradle.SettingsViewModelTest.given viewmodel when in stock only is changed then ui stated and repository are update.executor": "Run",
     "Gradle.SettingsViewModelTest.given viewmodel when theme mode is changed then ui stated and repository are update.executor": "Run",
+    "Gradle.Tests in 'CursoTesting.app.unitTest'.executor": "Run",
     "Gradle.UpdateCartItemUseCaseTest.given negative quantity when invokes then throws quantity must be positive.executor": "Run",
     "Gradle.UpdateCartItemUseCaseTest.given zero quantity when invokes then removes items from cart.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
@@ -271,9 +279,10 @@
     "cidr.known.project.marker": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
+    "external.system.has.shared.sources": "true",
     "git-widget-placeholder": "feature/integration__test",
     "kotlin-language-version-configured": "true",
-    "last_directory_selection": "E:/trabajosAndroid/CursoTesting/app/src/androidTest/java/com/jmarser/cursotesting/cart/data",
+    "last_directory_selection": "E:/trabajosAndroid/CursoTesting/app/src/androidTest/java/com/jmarser/cursotesting/cart",
     "last_opened_file_path": "E:/trabajosAndroid/CursoTesting/app/src/androidTest/assets",
     "settings.editor.selected.configurable": "fileTemplates"
   }
@@ -287,21 +296,24 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.jmarser.cursotesting.cart.presentation" />
+      <recent name="com.jmarser.cursotesting.productlist.presentation" />
       <recent name="com.jmarser.cursotesting.cart.data.repository" />
       <recent name="com.jmarser.cursotesting.productlist.data.repository" />
       <recent name="com.jmarser.cursotesting.productlist.data.remote" />
-      <recent name="com.jmarser.cursotesting.productlist.data.local.database.dao" />
-      <recent name="com.jmarser.cursotesting.productlist.data.local" />
+    </key>
+    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="com.jmarser.cursotesting.core" />
     </key>
     <key name="K2MoveDeclarationsDialog.RECENT_PACKAGE_KEY">
       <recent name="com.jmarser.cursotesting.core.utils" />
+      <recent name="com.jmarser.cursotesting.core.mockwebserver" />
       <recent name="com.jmarser.cursotesting.cart.domain.repository" />
       <recent name="com.jmarser.cursotesting.cart.data.repository" />
       <recent name="com.jmarser.cursotesting.core.data.local.database" />
-      <recent name="com.jmarser.cursotesting.productlist.presentation.components" />
     </key>
   </component>
-  <component name="RunManager" selected="Android Instrumented Tests.CartRepositoryImplTest">
+  <component name="RunManager" selected="Android Instrumented Tests.All Tests">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="CursoTesting.app" />
       <option name="ANDROID_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
@@ -374,12 +386,71 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CartRepositoryImplTest" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
+    <configuration name="All Tests" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
+      <module name="CursoTesting.app" />
+      <option name="ANDROID_TEST_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_NAME_REGEX" value="" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Hybrid>
+      <Java>
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Java>
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OfflineFirstIntegrationTest" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
       <module name="CursoTesting.app" />
       <option name="ANDROID_TEST_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
       <option name="TESTING_TYPE" value="2" />
       <option name="METHOD_NAME" value="" />
-      <option name="CLASS_NAME" value="com.jmarser.cursotesting.cart.data.repository.CartRepositoryImplTest" />
+      <option name="CLASS_NAME" value="com.jmarser.cursotesting.core.OfflineFirstIntegrationTest" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_NAME_REGEX" value="" />
       <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
@@ -433,12 +504,12 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="given_exist_cartItems_when_clearCart_isCalled_then_returns_empty_list()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
+    <configuration name="given_cachedProducts_and_failed_refresh_when_getProducts_then_returns_previusCache()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
       <module name="CursoTesting.app" />
       <option name="ANDROID_TEST_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
       <option name="TESTING_TYPE" value="3" />
-      <option name="METHOD_NAME" value="given_exist_cartItems_when_clearCart_isCalled_then_returns_empty_list" />
-      <option name="CLASS_NAME" value="com.jmarser.cursotesting.cart.data.repository.CartRepositoryImplTest" />
+      <option name="METHOD_NAME" value="given_cachedProducts_and_failed_refresh_when_getProducts_then_returns_previusCache" />
+      <option name="CLASS_NAME" value="com.jmarser.cursotesting.core.OfflineFirstIntegrationTest" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_NAME_REGEX" value="" />
       <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
@@ -492,12 +563,12 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="given_exist_cartItems_when_deleteCartItem_no_exists_then_returns_error()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
+    <configuration name="given_cachedProducts_when_refresh_with_new_payload_then_contains_only_latest_products()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
       <module name="CursoTesting.app" />
       <option name="ANDROID_TEST_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
       <option name="TESTING_TYPE" value="3" />
-      <option name="METHOD_NAME" value="given_exist_cartItems_when_deleteCartItem_no_exists_then_returns_error" />
-      <option name="CLASS_NAME" value="com.jmarser.cursotesting.cart.data.repository.CartRepositoryImplTest" />
+      <option name="METHOD_NAME" value="given_cachedProducts_when_refresh_with_new_payload_then_contains_only_latest_products" />
+      <option name="CLASS_NAME" value="com.jmarser.cursotesting.core.OfflineFirstIntegrationTest" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_NAME_REGEX" value="" />
       <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
@@ -551,131 +622,42 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="given_exist_cartItems_when_getCartItemId_exists_then_returns_cartItem()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
-      <module name="CursoTesting.app" />
-      <option name="ANDROID_TEST_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
-      <option name="TESTING_TYPE" value="3" />
-      <option name="METHOD_NAME" value="given_exist_cartItems_when_getCartItemId_exists_then_returns_cartItem" />
-      <option name="CLASS_NAME" value="com.jmarser.cursotesting.cart.data.repository.CartRepositoryImplTest" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_NAME_REGEX" value="" />
-      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
-      <option name="EXTRA_OPTIONS" value="" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
-      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
-      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
-      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <option name="DEBUGGER_TYPE" value="Auto" />
-      <Auto>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
-        <option name="DEBUG_SANDBOX_SDK" value="false" />
-      </Auto>
-      <Hybrid>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
-        <option name="DEBUG_SANDBOX_SDK" value="false" />
-      </Hybrid>
-      <Java>
-        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
-        <option name="DEBUG_SANDBOX_SDK" value="false" />
-      </Java>
-      <Native>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
-        <option name="DEBUG_SANDBOX_SDK" value="false" />
-      </Native>
-      <Profilers>
-        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
-        <option name="STARTUP_PROFILING_ENABLED" value="false" />
-        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
-        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
-        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
-        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
-      </Profilers>
-      <method v="2">
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="given_nonExistingItem_when_updateQuantity_isCalled_then_throws_NotFoundError()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
-      <module name="CursoTesting.app" />
-      <option name="ANDROID_TEST_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
-      <option name="TESTING_TYPE" value="3" />
-      <option name="METHOD_NAME" value="given_nonExistingItem_when_updateQuantity_isCalled_then_throws_NotFoundError" />
-      <option name="CLASS_NAME" value="com.jmarser.cursotesting.cart.data.repository.CartRepositoryImplTest" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_NAME_REGEX" value="" />
-      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
-      <option name="EXTRA_OPTIONS" value="" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
-      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
-      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
-      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <option name="DEBUGGER_TYPE" value="Auto" />
-      <Auto>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
-        <option name="DEBUG_SANDBOX_SDK" value="false" />
-      </Auto>
-      <Hybrid>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
-        <option name="DEBUG_SANDBOX_SDK" value="false" />
-      </Hybrid>
-      <Java>
-        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
-        <option name="DEBUG_SANDBOX_SDK" value="false" />
-      </Java>
-      <Native>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
-        <option name="DEBUG_SANDBOX_SDK" value="false" />
-      </Native>
-      <Profilers>
-        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
-        <option name="STARTUP_PROFILING_ENABLED" value="false" />
-        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
-        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
-        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
-        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
-      </Profilers>
-      <method v="2">
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
+    <configuration name="Tests in 'CursoTesting.app.unitTest'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":app:testDebugUnitTest" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
+      <EXTENSION ID="com.android.tools.idea.testartifacts.testsuite.GradleRunConfigurationExtension">
+        <com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>false</com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>
+        <android.execution.deploysToLocalDevice>false</android.execution.deploysToLocalDevice>
+      </EXTENSION>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <GradleProfilingDisabled>false</GradleProfilingDisabled>
+      <GradleCoverageDisabled>false</GradleCoverageDisabled>
+      <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Android Instrumented Tests.CartRepositoryImplTest" />
-        <item itemvalue="Android Instrumented Tests.given_exist_cartItems_when_deleteCartItem_no_exists_then_returns_error()" />
-        <item itemvalue="Android Instrumented Tests.given_nonExistingItem_when_updateQuantity_isCalled_then_throws_NotFoundError()" />
-        <item itemvalue="Android Instrumented Tests.given_exist_cartItems_when_clearCart_isCalled_then_returns_empty_list()" />
-        <item itemvalue="Android Instrumented Tests.given_exist_cartItems_when_getCartItemId_exists_then_returns_cartItem()" />
+        <item itemvalue="Android Instrumented Tests.All Tests" />
+        <item itemvalue="Gradle.Tests in 'CursoTesting.app.unitTest'" />
+        <item itemvalue="Android Instrumented Tests.OfflineFirstIntegrationTest" />
+        <item itemvalue="Android Instrumented Tests.given_cachedProducts_when_refresh_with_new_payload_then_contains_only_latest_products()" />
+        <item itemvalue="Android Instrumented Tests.given_cachedProducts_and_failed_refresh_when_getProducts_then_returns_previusCache()" />
       </list>
     </recent_temporary>
   </component>

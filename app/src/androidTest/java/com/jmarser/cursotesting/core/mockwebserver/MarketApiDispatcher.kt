@@ -1,0 +1,26 @@
+package com.jmarser.cursotesting.core.mockwebserver
+
+import okhttp3.mockwebserver.Dispatcher
+import okhttp3.mockwebserver.MockResponse
+import okhttp3.mockwebserver.RecordedRequest
+
+/**
+ * Project: CursoTesting
+ * File: MarketApiDispatcher.kt
+ * Author: Tu Jmarser <aenur32@gmail.com>
+ * Created: 03/06/2026
+ */
+
+class MarketApiDispatcher (
+    private val productJson: String,
+    private val promoJson: String = """{"promotions":[]}"""
+): Dispatcher() {
+    override fun dispatch(request: RecordedRequest): MockResponse {
+        return when{
+            request.path?.contains("promotions.json") == true -> MockResponse().setBody(promoJson).setResponseCode(200)
+            request.path?.contains("products.json") == true -> MockResponse().setBody(productJson).setResponseCode(200)
+            else -> MockResponse().setResponseCode(404)
+        }
+    }
+
+}

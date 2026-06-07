@@ -4,6 +4,7 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import com.jmarser.cursotesting.core.mockwebserver.MockWebServerUrlHolder
 import com.jmarser.cursotesting.core.mockwebserver.rules.MockWebServerRule
+import com.jmarser.cursotesting.core.utils.JsonUtils.readJson
 import com.jmarser.cursotesting.productlist.domain.repository.PromotionRepository
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
@@ -43,10 +44,6 @@ class PromotionRepositoryImplTest {
         MockWebServerUrlHolder.baseUrl = "http://localhost:8080/"
     }
 
-    private fun readJson(fileName: String): String{
-        val context = InstrumentationRegistry.getInstrumentation().context
-        return context.assets.open(fileName).bufferedReader().use { it.readText() }
-    }
 
     @Test
     fun given_active_promotions_json_when_refresh_isCalled_then_flow_emits_active_promotions() =

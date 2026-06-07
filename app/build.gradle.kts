@@ -44,6 +44,15 @@ android {
     kotlin{
         jvmToolchain(17)
     }
+
+    sourceSets {
+        getByName("test"){
+            java.directories.add("src/sharedTest/java")
+        }
+        getByName("androidTest"){
+            java.directories.add("src/sharedTest/java")
+        }
+    }
 }
 
 dependencies {
@@ -113,4 +122,5 @@ dependencies {
     testImplementation(libs.mockwebserver)
     androidTestImplementation(libs.mockwebserver)
     androidTestImplementation(libs.hilt.android.testing)
+    androidTestImplementation(libs.kotlin.test)
 }

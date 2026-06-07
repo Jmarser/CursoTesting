@@ -1,6 +1,5 @@
 package com.jmarser.cursotesting
 
-import androidx.lifecycle.viewmodel.compose.viewModel
 import app.cash.turbine.test
 import com.jmarser.cursotesting.core.domain.model.ThemeMode
 import com.jmarser.cursotesting.core.utils.MainDispatcherRule

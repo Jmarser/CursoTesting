@@ -32,8 +32,9 @@ class SettingsRepositoryImplTest {
     lateinit var settingsRepository: SettingsRepository
 
     @Before
-    fun setUp() {
+    fun setUp() = runTest{
         hilt.inject()
+        (settingsRepository as? SettingsRepositoryImpl)?.clear()
     }
 
     @After

@@ -5,19 +5,16 @@
       <SelectionState runConfigName="app">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="given_exist_cartItems_when_getCartItemId_exists_then_returns_cartItem()">
+      <SelectionState runConfigName="given_cachedProducts_and_failed_refresh_when_getProducts_then_returns_previusCache()">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="given_exist_cartItems_when_clearCart_isCalled_then_returns_empty_list()">
+      <SelectionState runConfigName="given_cachedProducts_when_refresh_with_new_payload_then_contains_only_latest_products()">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="given_exist_cartItems_when_deleteCartItem_no_exists_then_returns_error()">
+      <SelectionState runConfigName="OfflineFirstIntegrationTest">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="given_nonExistingItem_when_updateQuantity_isCalled_then_throws_NotFoundError()">
-        <option name="selectionMode" value="DROPDOWN" />
-      </SelectionState>
-      <SelectionState runConfigName="CartRepositoryImplTest">
+      <SelectionState runConfigName="All Tests">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
     </selectionStates>

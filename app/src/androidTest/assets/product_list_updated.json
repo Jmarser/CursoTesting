@@ -1,0 +1,39 @@
+{
+  "products": [
+    {
+      "id": "p1",
+      "name": "Pan",
+      "priceCents": 1000,
+      "category": "Panadería",
+      "stock": 5
+    },
+    {
+      "id": "p2",
+      "name": "Leche",
+      "priceCents": 3000,
+      "category": "Lácteos",
+      "stock": 2
+    },
+    {
+      "id": "p3",
+      "name": "Queso",
+      "priceCents": 2000,
+      "category": "Lácteos",
+      "stock": 8
+    },
+    {
+      "id": "p4",
+      "name": "Naranjas",
+      "priceCents": 300,
+      "category": "Frutas",
+      "stock": 20
+    },
+    {
+      "id": "p5",
+      "name": "Huevos",
+      "priceCents": 1500,
+      "category": "Carnicería",
+      "stock": 12
+    }
+  ]
+}
