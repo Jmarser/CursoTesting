@@ -10,15 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b6a9757-4c0b-42c6-aabb-e066f0a68fa4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/checkout/data/mapper/OrderConfirmationMapper.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/checkout/data/remote/response/OrderConfirmationResponse.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/checkout/data/repository/OrderRepositoryImpl.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/checkout/domain/model/OrderConfirmation.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/checkout/domain/repository/OrderRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/checkout/domain/useCase/PlaceOrderUseCase.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/productlist/data/remote/MarketApiService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/productlist/data/remote/MarketApiService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/productlist/data/remote/RemoteDataSource.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jmarser/cursotesting/productlist/data/remote/RemoteDataSource.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,13 +46,13 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin Enum" />
-        <option value="Kotlin File" />
         <option value="File composable" />
         <option value="Kotlin Object" />
         <option value="Kotlin JUnit4 Test Class" />
         <option value="Kotlin Interface" />
         <option value="Kotlin Class" />
         <option value="Kotlin Data Class" />
+        <option value="Kotlin File" />
       </list>
     </option>
   </component>
