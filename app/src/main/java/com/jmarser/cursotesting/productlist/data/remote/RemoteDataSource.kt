@@ -1,5 +1,6 @@
 package com.jmarser.cursotesting.productlist.data.remote
 
+import com.jmarser.cursotesting.checkout.data.remote.response.OrderConfirmationResponse
 import com.jmarser.cursotesting.core.domain.model.AppError
 import com.jmarser.cursotesting.productlist.data.remote.model.ProductResponse
 import com.jmarser.cursotesting.productlist.data.remote.model.PromotionResponse
@@ -36,6 +37,15 @@ class RemoteDataSource @Inject constructor(
             val response = marketApiService.getPromotions()
             Result.success(response.promotions)
 
+        }catch (e: Exception){
+            Result.failure(mapToDomainError(e))
+        }
+    }
+
+    suspend fun placeOrder(): Result<OrderConfirmationResponse>{
+        return try {
+            val response = marketApiService.placeOrder()
+            Result.success(response)
         }catch (e: Exception){
             Result.failure(mapToDomainError(e))
         }
