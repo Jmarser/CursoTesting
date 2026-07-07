@@ -2,12 +2,9 @@ package com.jmarser.cursotesting.cart.domain.usecase
 
 import com.jmarser.cursotesting.cart.data.repository.FakeCartRepositoryImpl
 import com.jmarser.cursotesting.cart.data.repository.FakeProductRepositoryImpl
-import com.jmarser.cursotesting.cart.domain.repository.CartRepository
 import com.jmarser.cursotesting.core.builders.cartItem
 import com.jmarser.cursotesting.core.builders.product
 import com.jmarser.cursotesting.core.domain.model.AppError
-import com.jmarser.cursotesting.productlist.domain.repository.ProductRepository
-import io.mockk.mockk
 import junit.framework.TestCase.assertEquals
 import junit.framework.TestCase.assertTrue
 import kotlinx.coroutines.flow.first

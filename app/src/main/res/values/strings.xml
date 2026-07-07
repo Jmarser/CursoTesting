@@ -1,3 +1,52 @@
 <resources>
     <string name="app_name">CursoTesting</string>
+    
+    <!-- SETTINGS SCREEN -->
+    <string name="settings_title">Ajustes</string>
+    <string name="settings_filters_section">Filtros y visualización</string>
+    <string name="settings_in_stock_only_title">Sólo productos en Stock</string>
+    <string name="settings_in_stock_only_subtitle">Muestra únicamente los productos disponibles.</string>
+    <string name="settings_included_tax_title">Mostrar impuestos incluidos.</string>
+    <string name="settings_included_tax_subtitle">Incluir impuestos de los precios mostrados.</string>
+    <string name="settings_appearance_section">Apariencia</string>
+    <string name="settings_appearance_title">Tema de la aplicación</string>
+    <string name="settings_appearance_subtitle">Elige entre el modo claro, oscuro o el del sistema.</string>
+    <string name="theme_system">Sistema</string>
+    <string name="theme_clear">Claro</string>
+    <string name="theme_dark">Oscuro</string>
+
+    <!-- PRODUCTLIST SCREEN -->
+    <string name="product_list_error">ERROR</string>
+    <string name="product_list_product_not_found">No se encontrarón productos</string>
+
+    <!-- FILTERS MENU -->
+    <string name="filters_menu_categories_title">Categorías</string>
+    <string name="filters_menu_categories_option_all">Todas</string>
+    <string name="filters_menu_sort_title">Ordenar por</string>
+    <string name="filters_menu_sort_option_price_asc">Precio asc.</string>
+    <string name="filters_menu_sort_option_price_desc">Precio desc.</string>
+    <string name="filters_menu_sort_option_discount">Descuento</string>
+    
+    <!-- CART SCREEN -->
+    <string name="cart_title">Carrito</string>
+    <string name="cart_retry">Reintentar</string>
+    <string name="cart_empty_message">Tu carrito está vacío</string>
+    <string name="cart_empty_sub_message">Agrega productos para comenzar</string>
+    
+    <!-- PRODUCT DETAILS -->
+    <string name="product_details_title">Detalles del producto</string>
+    <string name="product_details_stock_available">Stock disponible</string>
+    <string name="product_details_quantity_stock_available">%1$d unidades</string>
+    <string name="product_details_no_stock">Sin stock</string>
+    <string name="product_details_promotion_buy_pay_name">PROMO: %1$s</string>
+    <string name="product_details_promotion_percent_name">PROMO: %1$s %% OFF</string>
+    <string name="add_to_cart_button_add_to_cart">Agregar al carrito</string>
+    <string name="add_to_cart_button_out_stock_available">Sin stock disponible</string>
+
+    <!-- MESSAGES -->
+    <string name="insuficient_stock_error">No hay suficiente stock</string>
+    <string name="network_error">No hay internet, compruebe su conexión</string>
+    <string name="unknow_error">Error inesperado, vuelva a intentarlo</string>
+    <string name="success_add_to_cart">Producto añadido al carrito</string>
+    
 </resources>

@@ -24,11 +24,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
+import com.jmarser.cursotesting.core.presentation.testing.UiTestTag.productListItem
 import com.jmarser.cursotesting.core.utils.toPriceAmount
 import com.jmarser.cursotesting.productlist.domain.model.ProductPromotion
 import com.jmarser.cursotesting.productlist.domain.model.ProductWithPromotion
@@ -53,6 +55,7 @@ fun ProductItem(
     Card(
         modifier = modifier
             .fillMaxWidth()
+            .testTag(productListItem(productWithPromotion.product.id))
             .padding(
                 horizontal = 16.dp,
                 vertical = 8.dp

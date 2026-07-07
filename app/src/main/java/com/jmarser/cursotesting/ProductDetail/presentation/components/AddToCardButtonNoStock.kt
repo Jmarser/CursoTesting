@@ -18,8 +18,13 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.jmarser.cursotesting.R
+import com.jmarser.cursotesting.core.presentation.testing.UiTestTag.ADD_TO_CART_BUTTON_WITHOUT_STOCK
+import com.jmarser.cursotesting.core.presentation.testing.UiTestTag.ADD_TO_CART_BUTTON_WITH_STOCK
 
 @Composable
 fun AddToCardButtonNoStock(modifier: Modifier = Modifier) {
@@ -35,7 +40,8 @@ fun AddToCardButtonNoStock(modifier: Modifier = Modifier) {
         ){
             Button(
                 modifier = Modifier
-                    .fillMaxWidth(),
+                    .fillMaxWidth()
+                    .testTag(ADD_TO_CART_BUTTON_WITHOUT_STOCK),
                 enabled = false,
                 onClick = {},
                 shape = RoundedCornerShape(12.dp),
@@ -51,7 +57,7 @@ fun AddToCardButtonNoStock(modifier: Modifier = Modifier) {
                 )
                 Spacer(Modifier.width(8.dp))
                 Text(
-                    text = "Sin stock disponible",
+                    text = stringResource(R.string.add_to_cart_button_out_stock_available),
                     fontWeight = FontWeight.Bold,
                     color = MaterialTheme.colorScheme.onPrimaryContainer
                 )

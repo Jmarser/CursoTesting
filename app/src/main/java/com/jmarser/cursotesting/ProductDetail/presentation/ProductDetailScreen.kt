@@ -28,9 +28,12 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -38,8 +41,24 @@ import coil3.compose.AsyncImage
 import com.jmarser.cursotesting.ProductDetail.presentation.components.AddToCardButton
 import com.jmarser.cursotesting.R
 import com.jmarser.cursotesting.core.presentation.components.MarketTopAppBar
+import com.jmarser.cursotesting.core.presentation.testing.UiTestTag.PRODUCT_DETAILS_CARD_PRODUCT
+import com.jmarser.cursotesting.core.presentation.testing.UiTestTag.PRODUCT_DETAILS_IMAGE_PRODUCT
+import com.jmarser.cursotesting.core.presentation.testing.UiTestTag.PRODUCT_DETAILS_PRODUCT_CATEGORY
+import com.jmarser.cursotesting.core.presentation.testing.UiTestTag.PRODUCT_DETAILS_PRODUCT_DESCRIPTION
+import com.jmarser.cursotesting.core.presentation.testing.UiTestTag.PRODUCT_DETAILS_PRODUCT_DISPLAY_PROMOTION_BUY_PAY
+import com.jmarser.cursotesting.core.presentation.testing.UiTestTag.PRODUCT_DETAILS_PRODUCT_DISPLAY_PROMOTION_PERCENT
+import com.jmarser.cursotesting.core.presentation.testing.UiTestTag.PRODUCT_DETAILS_PRODUCT_DISPLAY_UNITS_STOCK
+import com.jmarser.cursotesting.core.presentation.testing.UiTestTag.PRODUCT_DETAILS_PRODUCT_NAME
+import com.jmarser.cursotesting.core.presentation.testing.UiTestTag.PRODUCT_DETAILS_PRODUCT_PRICE
+import com.jmarser.cursotesting.core.presentation.testing.UiTestTag.PRODUCT_DETAILS_PRODUCT_PRICE_WITH_DESCOUNT
+import com.jmarser.cursotesting.core.presentation.testing.UiTestTag.PRODUCT_DETAILS_PRODUCT_STOCK_TITLE
+import com.jmarser.cursotesting.core.presentation.testing.UiTestTag.PRODUCT_DETAILS_PROGRESS
+import com.jmarser.cursotesting.core.presentation.testing.UiTestTag.PRODUCT_DETAILS_STATE_LOADING
 import com.jmarser.cursotesting.core.utils.toPriceAmount
+import com.jmarser.cursotesting.productlist.domain.model.Product
 import com.jmarser.cursotesting.productlist.domain.model.ProductPromotion
+import com.jmarser.cursotesting.productlist.domain.model.ProductWithPromotion
+import com.jmarser.cursotesting.ui.theme.MyAppTheme
 
 @Composable
 fun ProductDetailScreen(
@@ -69,10 +88,26 @@ fun ProductDetailScreen(
         }
     }
 
+    ProductDetailContentScreen(
+        uiState = uiState,
+        snackbarHostState = snackbarHostState,
+        onBack = onBack,
+        onAddToCart = {viewModel.addToCart()}
+    )
+
+}
+
+@Composable
+fun ProductDetailContentScreen(
+    uiState: ProductDetailUiState,
+    snackbarHostState: SnackbarHostState = SnackbarHostState(),
+    onBack: () -> Unit,
+    onAddToCart: () -> Unit
+) {
     Scaffold(
         topBar = {
             MarketTopAppBar(
-                title = "Detalles del producto",
+                title = stringResource(R.string.product_details_title),
                 onBackSelected = {
                     onBack()
                 }
@@ -82,9 +117,7 @@ fun ProductDetailScreen(
             AddToCardButton(
                 product = uiState.item?.product,
                 isLoading = uiState.isLoading,
-                addToCard = {
-                    viewModel.addToCart()
-                }
+                addToCard = onAddToCart
             )
         },
         snackbarHost = {
@@ -99,10 +132,14 @@ fun ProductDetailScreen(
         ) {
             if (uiState.isLoading){
                 Box(
-                    Modifier.fillMaxSize(),
+                    Modifier
+                        .fillMaxSize()
+                        .testTag(PRODUCT_DETAILS_STATE_LOADING),
                     contentAlignment = Alignment.Center
                 ){
-                    CircularProgressIndicator()
+                    CircularProgressIndicator(
+                        modifier = Modifier.testTag(PRODUCT_DETAILS_PROGRESS)
+                    )
                 }
             }else{
                 uiState.item?.let {
@@ -124,7 +161,8 @@ fun ProductDetailScreen(
                     ) {
                         Card(
                             modifier = Modifier
-                                .fillMaxWidth(),
+                                .fillMaxWidth()
+                                .testTag(PRODUCT_DETAILS_CARD_PRODUCT),
                             elevation = CardDefaults.cardElevation(defaultElevation = 8.dp),
                             shape = RoundedCornerShape(16.dp)
                         ) {
@@ -134,6 +172,7 @@ fun ProductDetailScreen(
                                 verticalArrangement = Arrangement.spacedBy(16.dp)
                             ) {
                                 AsyncImage(
+                                    modifier = Modifier.testTag(PRODUCT_DETAILS_IMAGE_PRODUCT),
                                     model = product.imageUrl,
                                     contentDescription = product.name,
                                     contentScale = ContentScale.Crop,
@@ -141,6 +180,7 @@ fun ProductDetailScreen(
                                     error = painterResource(R.drawable.ic_launcher_foreground)
                                 )
                                 Text(
+                                    modifier = Modifier.testTag(PRODUCT_DETAILS_PRODUCT_NAME),
                                     text = product.name,
                                     style = MaterialTheme.typography.headlineMedium,
                                     fontWeight = FontWeight.Bold
@@ -152,7 +192,9 @@ fun ProductDetailScreen(
                                 ) {
                                     Text(
                                         text = product.category,
-                                        modifier = Modifier.padding(horizontal = 12.dp, vertical = 6.dp),
+                                        modifier = Modifier
+                                            .padding(horizontal = 12.dp, vertical = 6.dp)
+                                            .testTag(PRODUCT_DETAILS_PRODUCT_CATEGORY),
                                         style = MaterialTheme.typography.labelMedium,
                                         color = MaterialTheme.colorScheme.onSecondaryContainer
                                     )
@@ -160,6 +202,7 @@ fun ProductDetailScreen(
 
                                 if (product.description.isNotBlank()) {
                                     Text(
+                                        modifier = Modifier.testTag(PRODUCT_DETAILS_PRODUCT_DESCRIPTION),
                                         text = product.description
                                     )
                                 }
@@ -172,12 +215,14 @@ fun ProductDetailScreen(
                                         horizontalArrangement = Arrangement.spacedBy(12.dp)
                                     ) {
                                         Text(
+                                            modifier = Modifier.testTag(PRODUCT_DETAILS_PRODUCT_PRICE),
                                             text = product.price.toPriceAmount(),
                                             style = MaterialTheme.typography.bodyLarge,
                                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                                             textDecoration = TextDecoration.LineThrough
                                         )
                                         Text(
+                                            modifier = Modifier.testTag(PRODUCT_DETAILS_PRODUCT_PRICE_WITH_DESCOUNT),
                                             text = discountedPrice.toPriceAmount(),
                                             style = MaterialTheme.typography.displaySmall,
                                             color = MaterialTheme.colorScheme.primary,
@@ -194,15 +239,17 @@ fun ProductDetailScreen(
                                                 .padding(
                                                     horizontal = 12.dp,
                                                     vertical = 6.dp
-                                                ),
+                                                )
+                                                .testTag(PRODUCT_DETAILS_PRODUCT_DISPLAY_PROMOTION_PERCENT),
                                             style = MaterialTheme.typography.titleMedium,
                                             fontWeight = FontWeight.Bold,
                                             color = MaterialTheme.colorScheme.onErrorContainer,
-                                            text = "${(promotion as ProductPromotion.Percent).percent}% OFF"
+                                            text = stringResource(R.string.product_details_promotion_percent_name, (promotion as ProductPromotion.Percent).percent)
                                         )
                                     }
                                 }else{
                                     Text(
+                                        modifier = Modifier.testTag(PRODUCT_DETAILS_PRODUCT_PRICE),
                                         text = product.price.toPriceAmount(),
                                         style = MaterialTheme.typography.displaySmall,
                                         fontWeight = FontWeight.Bold
@@ -219,11 +266,12 @@ fun ProductDetailScreen(
                                                 .padding(
                                                     horizontal = 12.dp,
                                                     vertical = 6.dp
-                                                ),
+                                                )
+                                                .testTag(PRODUCT_DETAILS_PRODUCT_DISPLAY_PROMOTION_BUY_PAY),
                                             style = MaterialTheme.typography.titleMedium,
                                             fontWeight = FontWeight.Bold,
                                             color = MaterialTheme.colorScheme.onErrorContainer,
-                                            text = "PROMO: ${promotion.label}"
+                                            text = stringResource(R.string.product_details_promotion_buy_pay_name, promotion.label)
                                         )
                                     }
                                 }
@@ -244,7 +292,8 @@ fun ProductDetailScreen(
                                     verticalAlignment = Alignment.CenterVertically
                                 ) {
                                     Text(
-                                        text = "Stock disponible",
+                                        modifier = Modifier.testTag(PRODUCT_DETAILS_PRODUCT_STOCK_TITLE),
+                                        text = stringResource(R.string.product_details_stock_available),
                                         style = MaterialTheme.typography.bodyLarge,
                                         color = MaterialTheme.colorScheme.surfaceVariant
                                     )
@@ -254,12 +303,13 @@ fun ProductDetailScreen(
                                         color = colorStock
                                     ) {
                                         Text(
-                                            text = if (hasStock) "${product.stock} unidades" else "Sin stock",
+                                            text = if (hasStock) stringResource(R.string.product_details_quantity_stock_available, product.stock) else stringResource(R.string.product_details_no_stock),
                                             modifier = Modifier
                                                 .padding(
                                                     horizontal = 12.dp,
                                                     vertical = 6.dp
-                                                ),
+                                                )
+                                                .testTag(PRODUCT_DETAILS_PRODUCT_DISPLAY_UNITS_STOCK),
                                             style = MaterialTheme.typography.bodyLarge,
                                             fontWeight = FontWeight.Bold,
                                             color = MaterialTheme.colorScheme.onErrorContainer
@@ -275,4 +325,53 @@ fun ProductDetailScreen(
     }
 }
 
+@Preview(
+    showBackground = true,
+    showSystemUi = true,
+    name = "Pantalla loading"
+)
+@Composable
+private fun ProductDetailContentScreenPreview1(){
+    MyAppTheme {
+        ProductDetailContentScreen(
+            uiState = ProductDetailUiState(
+                item = null,
+                isLoading = true
+            ),
+            onBack = {},
+            onAddToCart = {}
+        )
+    }
+}
 
+@Preview(
+    showBackground = true,
+    showSystemUi = true,
+    name = "Pantalla success"
+)
+@Composable
+private fun ProductDetailContentScreenPreview2(){
+    val product1 = Product(
+        id = "1",
+        name = "Teclado Mecánico RGB",
+        description = "Teclado con switches red y retroiluminación personalizable.",
+        price = 89.99,
+        category = "Electrónica",
+        stock = 15,
+        imageUrl = null
+    )
+    val productWithPromo1 = ProductWithPromotion(
+        product = product1,
+        promotion = ProductPromotion.Percent(percent = 10.0, discountedPrice = 80.99)
+    )
+    MyAppTheme {
+        ProductDetailContentScreen(
+            uiState = ProductDetailUiState(
+                item = productWithPromo1,
+                isLoading = false
+            ),
+            onBack = {},
+            onAddToCart = {}
+        )
+    }
+}

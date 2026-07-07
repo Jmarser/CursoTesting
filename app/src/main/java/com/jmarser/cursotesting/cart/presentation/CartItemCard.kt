@@ -27,20 +27,22 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.rememberSwipeToDismissBoxState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
 import com.jmarser.cursotesting.cart.presentation.model.CartItemWithPromotion
 import com.jmarser.cursotesting.core.presentation.components.QuantitySelector
+import com.jmarser.cursotesting.core.presentation.testing.UiTestTag.cartItem
+import com.jmarser.cursotesting.core.presentation.testing.UiTestTag.cartQuantityDecrease
+import com.jmarser.cursotesting.core.presentation.testing.UiTestTag.cartQuantityIncrease
 import com.jmarser.cursotesting.productlist.domain.model.ProductPromotion
 import java.text.NumberFormat
-import java.util.Currency
 
 @Composable
 fun CartItemCard(
@@ -74,7 +76,8 @@ fun CartItemCard(
     }
 
     SwipeToDismissBox(
-        modifier = modifier,
+        modifier = modifier
+            .testTag(cartItem(product.id)),
         state = dismissState,
         enableDismissFromEndToStart = false,
         backgroundContent = {
@@ -178,7 +181,9 @@ fun CartItemCard(
                             onDecreaseQuantity(
                                 product.id, cartItem.quantity
                             )
-                        }
+                        },
+                        increaseTestTag = cartQuantityIncrease(product.id),
+                        decreaseTesTag = cartQuantityDecrease(product.id)
                     )
                 }
             }

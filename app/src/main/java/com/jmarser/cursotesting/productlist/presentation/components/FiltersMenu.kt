@@ -16,8 +16,14 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.jmarser.cursotesting.R
+import com.jmarser.cursotesting.core.presentation.testing.UiTestTag.FILTERS_MENU_COMPONENT
+import com.jmarser.cursotesting.core.presentation.testing.UiTestTag.productListCategory
+import com.jmarser.cursotesting.core.presentation.testing.UiTestTag.productListSortOption
 import com.jmarser.cursotesting.productlist.domain.model.SortOption
 import com.jmarser.cursotesting.productlist.presentation.ProductListUiState
 import com.jmarser.cursotesting.ui.theme.MyAppTheme
@@ -32,6 +38,7 @@ fun FiltersMenu(
     Card(
         modifier = modifier
             .fillMaxWidth()
+            .testTag(FILTERS_MENU_COMPONENT)
             .padding(
                 horizontal = 16.dp,
                 vertical = 8.dp
@@ -42,7 +49,7 @@ fun FiltersMenu(
             Modifier.padding(12.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
-            Text("Categorías")
+            Text(stringResource(R.string.filters_menu_categories_title))
             Row(
                 Modifier
                     .fillMaxWidth()
@@ -50,13 +57,14 @@ fun FiltersMenu(
                 horizontalArrangement = Arrangement.spacedBy(8.dp)
             ) {
                 FilterChip(
+                    modifier = Modifier.testTag(productListCategory(null)),
                     selected = state.selectedCategory == null,
                     onClick = {
                         onCategorySelected(null)
                     },
                     label = {
                         Text(
-                            text = "Todas",
+                            text = stringResource(R.string.filters_menu_categories_option_all),
                             style = MaterialTheme.typography.labelSmall
                         )
                     }
@@ -64,6 +72,7 @@ fun FiltersMenu(
 
                 state.categories.forEach { category ->
                     FilterChip(
+                        modifier = Modifier.testTag(productListCategory(category)),
                         selected = category.equals(state.selectedCategory, ignoreCase = true),
                         onClick = {
                             onCategorySelected(category)
@@ -80,7 +89,7 @@ fun FiltersMenu(
             }
             HorizontalDivider()
 
-            Text("Ordenar por")
+            Text(stringResource(R.string.filters_menu_sort_title))
 
             Row(
                 Modifier
@@ -89,37 +98,40 @@ fun FiltersMenu(
                 horizontalArrangement = Arrangement.spacedBy(8.dp)
             ) {
                 FilterChip(
+                    modifier = Modifier.testTag(productListSortOption(SortOption.PRICE_ASC)),
                     selected = state.sortOption == SortOption.PRICE_ASC,
                     onClick = {
                         onOrderSelected(SortOption.PRICE_ASC)
                     },
                     label = {
                         Text(
-                            text = "Precio asc.",
+                            text = stringResource(R.string.filters_menu_sort_option_price_asc),
                             style = MaterialTheme.typography.labelSmall
                         )
                     }
                 )
                 FilterChip(
+                    modifier = Modifier.testTag(productListSortOption(SortOption.PRICE_DESC)),
                     selected = state.sortOption == SortOption.PRICE_DESC,
                     onClick = {
                         onOrderSelected(SortOption.PRICE_DESC)
                     },
                     label = {
                         Text(
-                            text = "Precio desc.",
+                            text = stringResource(R.string.filters_menu_sort_option_price_desc),
                             style = MaterialTheme.typography.labelSmall
                         )
                     }
                 )
                 FilterChip(
+                    modifier = Modifier.testTag(productListSortOption(SortOption.DISCOUNT)),
                     selected = state.sortOption == SortOption.DISCOUNT,
                     onClick = {
                         onOrderSelected(SortOption.DISCOUNT)
                     },
                     label = {
                         Text(
-                            text = "Descuento",
+                            text = stringResource(R.string.filters_menu_sort_option_discount),
                             style = MaterialTheme.typography.labelSmall
                         )
                     }

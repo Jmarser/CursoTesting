@@ -5,7 +5,7 @@ import com.jmarser.cursotesting.cart.presentation.model.CartItemWithPromotion
 
 sealed class CartUiState {
     data class Success(
-        val summary: CartSummary,
+        val summary: CartSummary? = null,
         val cartItems: List<CartItemWithPromotion>,
         val isLoading: Boolean
     ) : CartUiState()

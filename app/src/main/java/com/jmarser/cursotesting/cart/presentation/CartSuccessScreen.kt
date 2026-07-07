@@ -17,8 +17,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.jmarser.cursotesting.R
+import com.jmarser.cursotesting.core.presentation.testing.UiTestTag.CART_STATE_SUCESS
+import com.jmarser.cursotesting.core.presentation.testing.UiTestTag.CART_STATE_SUCESS_EMPTY
 import java.text.NumberFormat
 import java.util.Currency
 
@@ -46,17 +51,18 @@ fun CartSuccessScreen(
         ) {isEmpty ->
             if (isEmpty){
                 Column(
+                    modifier = Modifier.testTag(CART_STATE_SUCESS_EMPTY),
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.spacedBy(16.dp)
                 ) {
                     Text(
-                        text = "Tu carrito está vacío",
+                        text = stringResource(R.string.cart_empty_message),
                         style = MaterialTheme.typography.titleLarge,
                         color = MaterialTheme.colorScheme.secondary,
                         fontWeight = FontWeight.Bold
                     )
                     Text(
-                        text = "Agrega productos para comenzar",
+                        text = stringResource(R.string.cart_empty_sub_message),
                         style = MaterialTheme.typography.bodyLarge,
                         color = MaterialTheme.colorScheme.onSurface,
                         fontWeight = FontWeight.Bold
@@ -65,6 +71,7 @@ fun CartSuccessScreen(
             }else{
                 LazyColumn(
                     modifier = Modifier
+                        .testTag(CART_STATE_SUCESS)
                         .weight(1f),
                     contentPadding = PaddingValues(
                         horizontal = 16.dp,

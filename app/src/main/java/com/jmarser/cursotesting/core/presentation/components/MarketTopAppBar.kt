@@ -12,7 +12,10 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.font.FontWeight
+import com.jmarser.cursotesting.core.presentation.testing.UiTestTag.MARKET_TOP_APP_BAR
+import com.jmarser.cursotesting.core.presentation.testing.UiTestTag.MARKET_TOP_APP_BAR_BACK_BUTTON
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -23,7 +26,7 @@ fun MarketTopAppBar(
 ) {
 
     TopAppBar(
-        modifier = modifier,
+        modifier = modifier.testTag(MARKET_TOP_APP_BAR),
         title = {
             Text(
                 text = title,
@@ -33,6 +36,7 @@ fun MarketTopAppBar(
         },
         navigationIcon = {
             IconButton(
+                modifier = Modifier.testTag(MARKET_TOP_APP_BAR_BACK_BUTTON),
                 onClick = {onBackSelected()}
             ) {
                 Icon(

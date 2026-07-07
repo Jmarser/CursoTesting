@@ -90,7 +90,7 @@ class CartViewModelIntegrationTest {
 
             assertTrue(result.cartItems.isNotEmpty())
             assertTrue(result.summary != null)
-            assertEquals(20.0, result.summary.subTotal, 0.01)
+            assertEquals(20.0, result.summary?.subTotal ?: 0.0, 0.01)
             cancelAndIgnoreRemainingEvents()
         }
     }

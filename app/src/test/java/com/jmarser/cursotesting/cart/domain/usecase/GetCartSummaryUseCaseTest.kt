@@ -10,7 +10,6 @@ import com.jmarser.cursotesting.productlist.data.repository.FakePromotionReposit
 import com.jmarser.cursotesting.productlist.domain.model.PromotionType
 import com.jmarser.cursotesting.productlist.domain.usecase.GetPromotionForProduct
 import junit.framework.TestCase.assertEquals
-import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest
 import org.junit.Before

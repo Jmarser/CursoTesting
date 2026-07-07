@@ -5,13 +5,13 @@
       <SelectionState runConfigName="app">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="given_cachedProducts_and_failed_refresh_when_getProducts_then_returns_previusCache()">
+      <SelectionState runConfigName="given_product_without_stock_when_rendered_then_shows_disabled_no_stock_action()">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="given_cachedProducts_when_refresh_with_new_payload_then_contains_only_latest_products()">
+      <SelectionState runConfigName="given_product_with_stock_when_rendered_then_shows_enabled_stock_action()">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="OfflineFirstIntegrationTest">
+      <SelectionState runConfigName="ProductDetailContentScreenTest">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
       <SelectionState runConfigName="All Tests">
