@@ -11,6 +11,7 @@ import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.ui.NavDisplay
 import com.jmarser.cursotesting.ProductDetail.presentation.ProductDetailScreen
 import com.jmarser.cursotesting.cart.presentation.CartScreen
+import com.jmarser.cursotesting.checkout.presentation.CheckoutScreen
 import com.jmarser.cursotesting.productlist.presentation.ProductListScreen
 import com.jmarser.cursotesting.settings.presentation.SettingsScreen
 
@@ -19,13 +20,13 @@ fun NavGraph() {
 
     val backStack: NavBackStack<NavKey> = rememberNavBackStack(Screen.ProductList)
 
-    val entries = entryProvider < NavKey>{
-        entry<Screen.ProductList>{
+    val entries = entryProvider<NavKey> {
+        entry<Screen.ProductList> {
             ProductListScreen(
                 navigateToSettings = {
                     backStack.add(Screen.Setting)
                 },
-                navigateToProductDetail = {productId ->
+                navigateToProductDetail = { productId ->
                     backStack.add(Screen.ProductDetail(productId))
                 },
                 navigateToCart = {
@@ -33,21 +34,24 @@ fun NavGraph() {
                 }
             )
         }
-        entry<Screen.Cart>{
+        entry<Screen.Cart> {
             CartScreen(
                 onBack = {
                     backStack.removeLastOrNull()
+                },
+                navigateToCheckout = {
+                    backStack.add(Screen.Checkout)
                 }
             )
         }
-        entry<Screen.Setting>{
+        entry<Screen.Setting> {
             SettingsScreen(
                 onBack = {
                     backStack.removeLastOrNull()
                 }
             )
         }
-        entry<Screen.ProductDetail>{route ->
+        entry<Screen.ProductDetail> { route ->
             ProductDetailScreen(
                 productId = route.productId,
                 onBack = {
@@ -55,12 +59,17 @@ fun NavGraph() {
                 }
             )
         }
+        entry<Screen.Checkout> {
+            CheckoutScreen(
+                onBack = { backStack.removeLastOrNull() }
+            )
+        }
     }
 
     NavDisplay(
         backStack = backStack,
         entryProvider = entries,
-        onBack = {backStack.removeLastOrNull()}
+        onBack = { backStack.removeLastOrNull() }
     )
 }
 

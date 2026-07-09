@@ -53,7 +53,8 @@ import java.util.Currency
 fun CartScreen(
     modifier: Modifier = Modifier,
     viewModel: CartViewModel = hiltViewModel(),
-    onBack: () -> Unit
+    onBack: () -> Unit,
+    navigateToCheckout: () -> Unit
 ) {
 
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
@@ -81,7 +82,8 @@ fun CartScreen(
         },
         onRemoveItem = { productId ->
             viewModel.removeFromCart(productId)
-        }
+        },
+        navigateToCheckout = navigateToCheckout
     )
 }
 
@@ -93,7 +95,8 @@ fun CartContentScreen(
     onRetry: () -> Unit,
     onIncreaseQuantity: (String, Int) -> Unit,
     onDecreaseQuantity: (String, Int) -> Unit,
-    onRemoveItem: (String) -> Unit
+    onRemoveItem: (String) -> Unit,
+    navigateToCheckout: () -> Unit
 ) {
     Scaffold(
         snackbarHost = {
@@ -217,6 +220,14 @@ fun CartContentScreen(
                             summary = uiState.summary,
                             currencyFormatter = currencyFormatter
                         )
+
+
+                        Button(
+                            modifier = Modifier.fillMaxWidth(),
+                            onClick = navigateToCheckout
+                        ) {
+                            Text("Finalizar compra")
+                        }
                     }
                 }
             }
@@ -238,7 +249,8 @@ private fun CartScreenContentPreview1(){
             onRetry = {},
             onIncreaseQuantity = {_, _ -> },
             onDecreaseQuantity = {_, _ -> },
-            onRemoveItem = {_ ->}
+            onRemoveItem = {_ ->},
+            navigateToCheckout = {}
         )
     }
 }
@@ -257,7 +269,8 @@ private fun CartScreenContentPreview2(){
             onRetry = {},
             onIncreaseQuantity = {_, _ -> },
             onDecreaseQuantity = {_, _ -> },
-            onRemoveItem = {_ ->}
+            onRemoveItem = {_ ->},
+            navigateToCheckout = {}
         )
     }
 }
@@ -280,7 +293,8 @@ private fun CartScreenContentPreview3(){
             onRetry = {},
             onIncreaseQuantity = {_, _ -> },
             onDecreaseQuantity = {_, _ -> },
-            onRemoveItem = {_ ->}
+            onRemoveItem = {_ ->},
+            navigateToCheckout = {}
         )
     }
 }
@@ -288,7 +302,7 @@ private fun CartScreenContentPreview3(){
 @Preview(
     showBackground = true,
     showSystemUi = true,
-    name = "Pantalla Success Empty"
+    name = "Pantalla Success"
 )
 @Composable
 private fun CartScreenContentPreview4(){
@@ -360,7 +374,8 @@ private fun CartScreenContentPreview4(){
             onRetry = {},
             onIncreaseQuantity = {_, _ -> },
             onDecreaseQuantity = {_, _ -> },
-            onRemoveItem = {_ ->}
+            onRemoveItem = {_ ->},
+            navigateToCheckout = {}
         )
     }
 }

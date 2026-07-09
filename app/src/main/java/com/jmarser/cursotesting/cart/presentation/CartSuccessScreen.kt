@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -33,7 +34,8 @@ fun CartSuccessScreen(
     state: CartUiState.Success,
     onIncreaseQuantity: (String, Int) -> Unit,
     onDecreaseQuantity: (String, Int) -> Unit,
-    onRemove: (String) -> Unit
+    onRemove: (String) -> Unit,
+    navigateToCheckout: () -> Unit
 ) {
 
     val currencyFormatter = remember {
@@ -108,6 +110,13 @@ fun CartSuccessScreen(
                 summary = state.summary,
                 currencyFormatter = currencyFormatter
             )
+
+            Button(
+                modifier = Modifier.fillMaxWidth(),
+                onClick = navigateToCheckout
+            ) {
+                Text("Finalizar compra")
+            }
         }
     }
 }

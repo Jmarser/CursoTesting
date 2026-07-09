@@ -8,8 +8,8 @@ class OrderConfirmationResponse(
 
     @SerialName(value = "orderId")
     val orderId: String,
-    @SerialName(value = "orderId")
+    @SerialName(value = "etaMinutes")
     val etaMinutes: Int,
-    @SerialName(value = "orderId")
+    @SerialName(value = "total")
     val total: Double,
 )
