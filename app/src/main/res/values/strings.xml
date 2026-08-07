@@ -42,6 +42,20 @@
     <string name="product_details_promotion_percent_name">PROMO: %1$s %% OFF</string>
     <string name="add_to_cart_button_add_to_cart">Agregar al carrito</string>
     <string name="add_to_cart_button_out_stock_available">Sin stock disponible</string>
+    
+    <!-- CHECKOUT SCREEN -->
+    <string name="checkout_title">Checkout</string>
+    <string name="checkout_retry">Reintentar</string>
+    <string name="checkout_order_confirmed">Pedido confirmado: %1$s</string>
+    <string name="checkout_order_eta_minutes">Tiempo estimado: %1$d</string>
+    <string name="checkout_order_price">Precio: %1$f</string>
+    <string name="checkout_form_name">Nombre</string>
+    <string name="checkout_form_address">Dirección</string>
+    <string name="checkout_form_email">Email</string>
+    <string name="checkout_your_cart_is_empty">Tu carrito está vacío</string>
+    <string name="checkout_processing_payment">Procesando el pago ...</string>
+    <string name="checkout_confirm_order">Confirmar pago</string>
+    <string name="checkout_total">Total: %1$f</string>
 
     <!-- MESSAGES -->
     <string name="insuficient_stock_error">No hay suficiente stock</string>
